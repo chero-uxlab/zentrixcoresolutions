@@ -1,6 +1,7 @@
 import { ProductItem } from "./types";
 
 export const KSH_PRODUCTS: ProductItem[] = [
+  // --- HARDWARE: LAPTOPS & TABLETS ---
   {
     id: "hp_250_g9_laptop",
     name: "HP 250 G9 Intel Core i3 Laptop",
@@ -32,108 +33,33 @@ export const KSH_PRODUCTS: ProductItem[] = [
     ]
   },
   {
-    id: "tplink_wr840n_router",
-    name: "TP-Link TL-WR840N Wireless N Router",
+    id: "asus_vivobook_15",
+    name: "Asus VivoBook 15 Core i7 Premium Laptop",
     category: "Hardware",
-    price: 2150,
-    rating: 4.5,
-    description: "300Mbps wireless transmission rate ideal for both bandwidth sensitive tasks and basic work. Dual fixed omnidirectional antennas.",
-    image: "https://images.unsplash.com/photo-1631553127988-5f7242df0be5?w=500&q=80",
-    features: [
-      "300Mbps high velocity wireless data rate",
-      "Two high-gain antennas for wide coverage",
-      "Easy setup with Tether smartphone application",
-      "Supports Router, AP, and Range Extender modes"
-    ]
-  },
-  {
-    id: "seagate_expansion_1tb",
-    name: "Seagate Expansion 1TB External Hard Drive",
-    category: "Hardware",
-    price: 7499,
+    price: 89500,
     rating: 4.8,
-    description: "USB 3.0 portable external hard drive. Drag-and-drop file saving right out of the box, bus-powered via USB port.",
-    image: "https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?w=500&q=80",
+    description: "Incredible enterprise power with Intel Core i7, 16GB DDR4 RAM, 512GB NVMe PCIe SSD, Intel Iris Xe graphics, and standard backlit keyboard.",
+    image: "https://images.unsplash.com/photo-1496181130204-7552cc14ac1a?w=500&q=80",
     features: [
-      "Sleek, lightweight pocket size casing",
-      "High speed USB 3.0 data synchronization",
-      "Drag-and-drop immediate plug-and-play",
-      "Compatible with Windows and macOS file formats"
+      "High performance Intel Core i7 CPU",
+      "16GB DDR4 system memory for heavy multitasking",
+      "512GB M.2 NVMe superfast internal SSD",
+      "Sleek and robust metal-finish design"
     ]
   },
   {
-    id: "logitech_mk270_combo",
-    name: "Logitech MK270 Wireless Keyboard & Mouse",
+    id: "apple_macbook_air_m2",
+    name: "Apple MacBook Air M2 (8GB, 256GB SSD)",
     category: "Hardware",
-    price: 3850,
-    rating: 4.7,
-    description: "Long-range 2.4 GHz wireless keyboard and mouse set. Features 8 multimedia hotkeys and extended battery life with plug-and-forget receiver.",
-    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80",
+    price: 154999,
+    rating: 4.9,
+    description: "Strikingly thin design, 13.6-inch Liquid Retina Display, ultra-fast Apple M2 silicon chip, silent fanless thermal system, and all-day battery.",
+    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80",
     features: [
-      "Secure, low latency 2.4 GHz wireless connection",
-      "Long range coverage up to 10 meters distance",
-      "Keyboard features 8 convenient media hotkeys",
-      "Extended battery lifespan (up to 36 months)"
-    ]
-  },
-  {
-    id: "epson_ecotank_l3210",
-    name: "Epson EcoTank L3210 InkTank Printer",
-    category: "Hardware",
-    price: 26999,
-    rating: 4.8,
-    description: "Multi-function 3-in-1 print, copy, and scan. Features ultra-low-cost ink tank technology with spill-free, key-locked bottles.",
-    image: "https://images.unsplash.com/photo-1612815154858-60aa4c233ab0?w=500&q=80",
-    features: [
-      "Integrated high-capacity spill-free ink tanks",
-      "Extremely low cost per print page ratio",
-      "Complete 3-in-1 Print, Scan, and Copy",
-      "Outstanding high print resolution of 5760 dpi"
-    ]
-  },
-  {
-    id: "sandisk_ultra_64gb",
-    name: "SanDisk Ultra Flair 64GB USB 3.0 Drive",
-    category: "Hardware",
-    price: 1399,
-    rating: 4.5,
-    description: "High-speed USB 3.0 performance of up to 150MB/s. Sleek, durable metal casing with secure files encryption tools.",
-    image: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=500&q=80",
-    features: [
-      "Blazing fast USB 3.0 transfer up to 150MB/s",
-      "Sleek, robust brushed-metal protective casing",
-      "Secure Access 128-bit file encryption software",
-      "Backward compatible with older USB 2.0 ports"
-    ]
-  },
-  {
-    id: "hikvision_webcam_u02",
-    name: "Hikvision DS-U02 1080P Full HD Webcam",
-    category: "Hardware",
-    price: 3200,
-    rating: 4.6,
-    description: "2 MP CMOS sensor providing high quality video at 1920x1080 resolution. Includes a built-in intelligent microphone.",
-    image: "https://images.unsplash.com/photo-1600541519463-ee3280145230?w=500&q=80",
-    features: [
-      "Stunning 1080P Full HD live streaming resolution",
-      "Smart low-light auto exposure adjustment",
-      "Integrated noise-reducing internal microphone",
-      "Flexible universal clip mount for monitors/laptops"
-    ]
-  },
-  {
-    id: "dell_se2422h_monitor",
-    name: "Dell SE2422H 24-Inch Full HD Monitor",
-    category: "Hardware",
-    price: 18900,
-    rating: 4.7,
-    description: "24\" screen with high quality LED backlight, 75Hz refresh rate, AMD FreeSync, and flicker-free screen protection.",
-    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80",
-    features: [
-      "Spacious 24-inch diagonal LED-backlit workspace",
-      "Ultra smooth 75Hz refresh rate with AMD FreeSync",
-      "Sleek compact stand to minimize desk clutter",
-      "TUV-certified comfort view eye protect mode"
+      "Powerful Apple M2 8-core CPU and 8-core GPU",
+      "13.6\" Liquid Retina Display with 500 nits brightness",
+      "MagSafe 3 charge port & dual Thunderbolt ports",
+      "Silent fanless operation with 18-hour battery"
     ]
   },
   {
@@ -151,6 +77,213 @@ export const KSH_PRODUCTS: ProductItem[] = [
       "12MP Ultra Wide front camera with Center Stage"
     ]
   },
+
+  // --- HARDWARE: NETWORKING ---
+  {
+    id: "tplink_wr840n_router",
+    name: "TP-Link TL-WR840N Wireless N Router",
+    category: "Hardware",
+    price: 2150,
+    rating: 4.5,
+    description: "300Mbps wireless transmission rate ideal for both bandwidth sensitive tasks and basic work. Dual fixed omnidirectional antennas.",
+    image: "https://images.unsplash.com/photo-1631553127988-5f7242df0be5?w=500&q=80",
+    features: [
+      "300Mbps high velocity wireless data rate",
+      "Two high-gain antennas for wide coverage",
+      "Easy setup with Tether smartphone application",
+      "Supports Router, AP, and Range Extender modes"
+    ]
+  },
+  {
+    id: "tplink_archer_c6",
+    name: "TP-Link Archer C6 AC1200 Dual Band Router",
+    category: "Hardware",
+    price: 4600,
+    rating: 4.7,
+    description: "AC1200 Dual-Band Wi-Fi Router offering 300Mbps at 2.4GHz and 867Mbps at 5GHz. 4 external antennas plus MU-MIMO technology.",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500&q=80",
+    features: [
+      "Simultaneous 2.4GHz and 5GHz dual-band channels",
+      "4 external high-gain antennas for broad coverage",
+      "MU-MIMO achieves double efficiency by communicating",
+      "Gigabit Ethernet ports for ultra-fast cable speed"
+    ]
+  },
+  {
+    id: "ubiquiti_unifi_ap_ac_lite",
+    name: "Ubiquiti UniFi AP AC Lite Access Point",
+    category: "Hardware",
+    price: 13950,
+    rating: 4.8,
+    description: "Enterprise grade dual-radio gigabit speed Wi-Fi access point. Managed using the sleek UniFi network controller package.",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80",
+    features: [
+      "Simultaneous dual-band 2x2 MIMO technology",
+      "802.3af/A PoE compatibility with ultra-low profile",
+      "Advanced enterprise software control system",
+      "Supports up to 250+ concurrent active client devices"
+    ]
+  },
+
+  // --- HARDWARE: PRINTERS & IMAGING ---
+  {
+    id: "epson_ecotank_l3210",
+    name: "Epson EcoTank L3210 InkTank Printer",
+    category: "Hardware",
+    price: 26999,
+    rating: 4.8,
+    description: "Multi-function 3-in-1 print, copy, and scan. Features ultra-low-cost ink tank technology with spill-free, key-locked bottles.",
+    image: "https://images.unsplash.com/photo-1612815154858-60aa4c233ab0?w=500&q=80",
+    features: [
+      "Integrated high-capacity spill-free ink tanks",
+      "Extremely low cost per print page ratio",
+      "Complete 3-in-1 Print, Scan, and Copy",
+      "Outstanding high print resolution of 5760 dpi"
+    ]
+  },
+  {
+    id: "hp_laserjet_m111a",
+    name: "HP LaserJet M111a Compact Mono Printer",
+    category: "Hardware",
+    price: 16900,
+    rating: 4.6,
+    description: "An efficient, high-quality monochrome laser printer that fits your space and budget. Prints crisp black text at speeds up to 20ppm.",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&q=80",
+    features: [
+      "Super compact layout to fit any home office desk",
+      "Crisp black laser print outputs up to 20ppm",
+      "Energy efficient auto-on/auto-off smart tool",
+      "150-sheet standard input paper tray capacity"
+    ]
+  },
+
+  // --- HARDWARE: MONITORS & DISP ---
+  {
+    id: "dell_se2422h_monitor",
+    name: "Dell SE2422H 24-Inch Full HD Monitor",
+    category: "Hardware",
+    price: 18900,
+    rating: 4.7,
+    description: "24\" screen with high quality LED backlight, 75Hz refresh rate, AMD FreeSync, and flicker-free screen protection.",
+    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80",
+    features: [
+      "Spacious 24-inch diagonal LED-backlit workspace",
+      "Ultra smooth 75Hz refresh rate with AMD FreeSync",
+      "Sleek compact stand to minimize desk clutter",
+      "TUV-certified comfort view eye protect mode"
+    ]
+  },
+  {
+    id: "lg_24mp400_monitor",
+    name: "LG 24MP400-B 24\" IPS FHD Monitor",
+    category: "Hardware",
+    price: 17500,
+    rating: 4.6,
+    description: "IPS panel for accurate colors and wide viewing angles. Standard thin bezel layout, AMD FreeSync, Reader Mode, and wall mountable.",
+    image: "https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=500&q=80",
+    features: [
+      "FHD IPS wide-view screen panel (1920x1080)",
+      "Three-side virtually borderless modern layout",
+      "Dynamic Action Sync and Black Stabilizer tools",
+      "Reader Mode & Flicker Safe to prevent eye strain"
+    ]
+  },
+
+  // --- HARDWARE: STORAGE & DISKS ---
+  {
+    id: "seagate_expansion_1tb",
+    name: "Seagate Expansion 1TB External Hard Drive",
+    category: "Hardware",
+    price: 7499,
+    rating: 4.8,
+    description: "USB 3.0 portable external hard drive. Drag-and-drop file saving right out of the box, bus-powered via USB port.",
+    image: "https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?w=500&q=80",
+    features: [
+      "Sleek, lightweight pocket size casing",
+      "High speed USB 3.0 data synchronization",
+      "Drag-and-drop immediate plug-and-play",
+      "Compatible with Windows and macOS file formats"
+    ]
+  },
+  {
+    id: "transcend_storejet_2tb",
+    name: "Transcend StoreJet 25M3 2TB Shockproof Disk",
+    category: "Hardware",
+    price: 11450,
+    rating: 4.8,
+    description: "Ruggedized external hard drive featuring military-grade shock resistance, USB 3.1 interface, and One-Touch auto-backup button.",
+    image: "https://images.unsplash.com/photo-1590156221122-c7b3cd6d21a6?w=500&q=80",
+    features: [
+      "Military-grade robust shockproof silicon shell",
+      "USB 3.1 Gen 1 high velocity interface",
+      "One-touch instant data auto-backup tool",
+      "Advanced 256-bit AES file encryption layers"
+    ]
+  },
+  {
+    id: "sandisk_ultra_64gb",
+    name: "SanDisk Ultra Flair 64GB USB 3.0 Drive",
+    category: "Hardware",
+    price: 1399,
+    rating: 4.5,
+    description: "High-speed USB 3.0 performance of up to 150MB/s. Sleek, durable metal casing with secure files encryption tools.",
+    image: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=500&q=80",
+    features: [
+      "Blazing fast USB 3.0 transfer up to 150MB/s",
+      "Sleek, robust brushed-metal protective casing",
+      "Secure Access 128-bit file encryption software",
+      "Backward compatible with older USB 2.0 ports"
+    ]
+  },
+
+  // --- HARDWARE: ACCESSORIES & INP ---
+  {
+    id: "logitech_mk270_combo",
+    name: "Logitech MK270 Wireless Keyboard & Mouse",
+    category: "Hardware",
+    price: 3850,
+    rating: 4.7,
+    description: "Long-range 2.4 GHz wireless keyboard and mouse set. Features 8 multimedia hotkeys and extended battery life with plug-and-forget receiver.",
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80",
+    features: [
+      "Secure, low latency 2.4 GHz wireless connection",
+      "Long range coverage up to 10 meters distance",
+      "Keyboard features 8 convenient media hotkeys",
+      "Extended battery lifespan (up to 36 months)"
+    ]
+  },
+  {
+    id: "logitech_m185_mouse",
+    name: "Logitech M185 Wireless Optical Mouse",
+    category: "Hardware",
+    price: 1800,
+    rating: 4.6,
+    description: "A simple, reliable mouse with plug-and-play wireless. Get a high quality connection with 12-month average battery life.",
+    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&q=80",
+    features: [
+      "Comfortable contoured design for left or right hands",
+      "Nano USB plug-and-forget wireless module receiver",
+      "Long-range 12-month battery life with smart sleep",
+      "High resolution optical tracking up to 1000 DPI"
+    ]
+  },
+  {
+    id: "hikvision_webcam_u02",
+    name: "Hikvision DS-U02 1080P Full HD Webcam",
+    category: "Hardware",
+    price: 3200,
+    rating: 4.6,
+    description: "2 MP CMOS sensor providing high quality video at 1920x1080 resolution. Includes a built-in intelligent microphone.",
+    image: "https://images.unsplash.com/photo-1600541519463-ee3280145230?w=500&q=80",
+    features: [
+      "Stunning 1080P Full HD live streaming resolution",
+      "Smart low-light auto exposure adjustment",
+      "Integrated noise-reducing internal microphone",
+      "Flexible universal clip mount for monitors/laptops"
+    ]
+  },
+
+  // --- SOFTWARE LICENSES ---
   {
     id: "m365_personal_1yr",
     name: "Microsoft 365 Personal (1-Year Liz)",
@@ -164,6 +297,21 @@ export const KSH_PRODUCTS: ProductItem[] = [
       "1TB of secure OneDrive cloud backup storage",
       "Continuous software feature & patch updates",
       "Cross-platform compatibility for PC, Mac, Mobile"
+    ]
+  },
+  {
+    id: "m365_bus_standard_1yr",
+    name: "Microsoft 365 Business Standard (Annual)",
+    category: "Software",
+    price: 19800,
+    rating: 4.9,
+    description: "Enterprise level business suite. Includes all premium Office apps plus corporate email inbox hosting, Microsoft Teams, and secure cloud storage.",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500&q=80",
+    features: [
+      "Word, Excel, PowerPoint, Outlook & Publisher",
+      "Premium Microsoft Teams setup for video meetings",
+      "50GB corporate email inbox hosting per user node",
+      "1TB secure OneDrive file storage system"
     ]
   },
   {
@@ -181,6 +329,8 @@ export const KSH_PRODUCTS: ProductItem[] = [
       "Real-time ransomware threat hunter shield"
     ]
   },
+
+  // --- SECURITY SYSTEMS ---
   {
     id: "hikvision_ip_camera",
     name: "Hikvision Outdoor Bullet IP Camera (2MP)",
@@ -211,6 +361,8 @@ export const KSH_PRODUCTS: ProductItem[] = [
       "Sim card integration for 4G backup data paths"
     ]
   },
+
+  // --- SERVICES & INTEGRATIONS ---
   {
     id: "pc_install_service",
     name: "PC On-Site Install & Config Service",
