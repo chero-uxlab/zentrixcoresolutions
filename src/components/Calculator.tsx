@@ -90,9 +90,12 @@ export default function Calculator({ onPreFillContact }: CalculatorProps) {
   const selectedComplexity = currentConfig.complexityOpts.find(o => o.val === complexity) || currentConfig.complexityOpts[1];
 
   // Mathematical pricing calculations
+  const USD_TO_KSH = 130;
   const actualScale = suiteCategory === "hvac" ? scaleSize * 100 : scaleSize;
-  const basePrice = scaleSize * currentConfig.baseCostPerUnit * selectedComplexity.multiplier;
-  const supportPrice = includeProSupport ? scaleSize * currentConfig.supportCostPerUnit : 0;
+  const basePriceUSD = scaleSize * currentConfig.baseCostPerUnit * selectedComplexity.multiplier;
+  const supportPriceUSD = includeProSupport ? scaleSize * currentConfig.supportCostPerUnit : 0;
+  const basePrice = basePriceUSD * USD_TO_KSH;
+  const supportPrice = supportPriceUSD * USD_TO_KSH;
   
   // Sizing details unique to categories
   let outputLeftTitle = "Performance Estimate";
@@ -128,13 +131,17 @@ export default function Calculator({ onPreFillContact }: CalculatorProps) {
   const yearlySavings = Math.round(basePrice * 0.18);
   const totalEstimate = Math.round(basePrice + supportPrice);
 
+  const formatKSh = (val: number) => {
+    return "KSh " + Math.round(val).toLocaleString("en-KE");
+  };
+
   const handleApplyToProposal = () => {
     let formattedMessage = `I would like to receive a formal corporate proposal for Zentrixcore services.\n`;
     formattedMessage += `Selected Category: ${currentConfig.title}\n`;
     formattedMessage += `- Scope: ${actualScale} ${currentConfig.unit}\n`;
     formattedMessage += `- Complexity Setup: ${selectedComplexity.label}\n`;
     formattedMessage += `- Add-on Option (${currentConfig.supportLabel}): ${includeProSupport ? "YES" : "NO"}\n`;
-    formattedMessage += `- Estimated Monthly Rate: $${totalEstimate.toLocaleString()}\n`;
+    formattedMessage += `- Estimated Monthly Rate: ${formatKSh(totalEstimate)}\n`;
     formattedMessage += `Please contact me to arrange an engineer survey and finalize pricing.`;
 
     onPreFillContact(formattedMessage);
@@ -281,17 +288,17 @@ export default function Calculator({ onPreFillContact }: CalculatorProps) {
             <div className="space-y-2 text-xs border-y border-slate-200 py-3">
               <div className="flex justify-between">
                 <span className="text-slate-500">Baseline Rate Cost:</span>
-                <span className="font-mono font-semibold text-slate-800">${Math.round(basePrice).toLocaleString()} /mo</span>
+                <span className="font-mono font-semibold text-slate-800">{formatKSh(basePrice)} /mo</span>
               </div>
               {includeProSupport && (
                 <div className="flex justify-between">
                   <span className="text-slate-500">Pro-SLA Support Add-on:</span>
-                  <span className="font-mono font-semibold text-slate-800">${Math.round(supportPrice).toLocaleString()} /mo</span>
+                  <span className="font-mono font-semibold text-slate-800">{formatKSh(supportPrice)} /mo</span>
                 </div>
               )}
               <div className="flex justify-between text-slate-800 font-bold text-sm pt-2 border-t border-slate-100">
                 <span>Estimated Contract Rate:</span>
-                <span className="font-mono text-teal-700 text-base">${totalEstimate.toLocaleString()} <span className="text-[10px] text-slate-400 font-sans">/mo</span></span>
+                <span className="font-mono text-teal-700 text-base">{formatKSh(totalEstimate)} <span className="text-[10px] text-slate-400 font-sans">/mo</span></span>
               </div>
             </div>
 

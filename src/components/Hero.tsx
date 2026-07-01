@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Send, PhoneCall, ChevronRight, Wind, ShieldAlert, Award, AlertCircle } from "lucide-react";
-import heroBg from "../assets/images/ac_hero_bg_1782809286852.jpg";
+
+const heroBg = "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80";
 
 interface HeroProps {
   onScrollToCalculator: () => void;
