@@ -89,6 +89,7 @@ export default function ShopPage({
 
   const [isProcessingOrder, setIsProcessingOrder] = useState(false);
   const [generatedOrderId, setGeneratedOrderId] = useState("");
+  const [checkoutMailStatus, setCheckoutMailStatus] = useState<{ type: "success" | "mock" | "error"; message?: string; details?: string } | null>(null);
 
   // Inline Validation Errors
   const [errors, setErrors] = useState<FormErrors>({});
@@ -243,11 +244,31 @@ export default function ShopPage({
       },
       body: JSON.stringify(orderData),
     })
-      .then((res) => res.json())
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.error || data.details || "SMTP server failed to deliver email");
+        }
+        return data;
+      })
       .then((data) => {
         setIsProcessingOrder(false);
         const orderId = data.orderId || `ZEN-2026-${Math.floor(Math.random() * 9000) + 1000}`;
         setGeneratedOrderId(orderId);
+        
+        if (data.isMock) {
+          setCheckoutMailStatus({
+            type: "mock",
+            message: "SMTP server is not configured in your application settings.",
+            details: "Configure SMTP_HOST, SMTP_USER, and SMTP_PASS under Settings > Secrets to enable real email delivery."
+          });
+        } else {
+          setCheckoutMailStatus({
+            type: "success",
+            message: "Your purchase invoice has been successfully sent to your inbox."
+          });
+        }
+        
         setStep("success");
       })
       .catch((err) => {
@@ -255,6 +276,11 @@ export default function ShopPage({
         const orderId = `ZEN-2026-${Math.floor(Math.random() * 9000) + 1000}`;
         setGeneratedOrderId(orderId);
         setIsProcessingOrder(false);
+        setCheckoutMailStatus({
+          type: "error",
+          message: "Email delivery failed.",
+          details: err.message || "Unknown error occurred while contacting SMTP gateway."
+        });
         setStep("success");
       });
   };
@@ -269,6 +295,7 @@ export default function ShopPage({
     setCardCvv("");
     setIsProcessingOrder(false);
     setErrors({});
+    setCheckoutMailStatus(null);
   };
 
   // Filter and search logic
@@ -1132,6 +1159,31 @@ export default function ShopPage({
                     Pro-forma invoice and dispatch confirmation logs sent to: <strong className="text-slate-800 block mt-0.5">{email}</strong>
                   </span>
                 </div>
+
+                {checkoutMailStatus && (
+                  <div className={`p-4 rounded-2xl text-left max-w-sm mx-auto space-y-1.5 border ${
+                    checkoutMailStatus.type === "success"
+                      ? "bg-emerald-50 border-emerald-100 text-emerald-800"
+                      : checkoutMailStatus.type === "mock"
+                      ? "bg-amber-50 border-amber-200 text-amber-800"
+                      : "bg-rose-50 border-rose-200 text-rose-800"
+                  }`}>
+                    <div className="flex items-center gap-2 font-bold text-[11px] uppercase tracking-wider">
+                      {checkoutMailStatus.type === "success" && <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />}
+                      {checkoutMailStatus.type === "mock" && <HelpCircle className="w-4 h-4 text-amber-600 flex-shrink-0" />}
+                      {checkoutMailStatus.type === "error" && <AlertCircle className="w-4 h-4 text-rose-600 flex-shrink-0" />}
+                      <span>Email Delivery System Status</span>
+                    </div>
+                    <p className="text-xs font-semibold leading-relaxed">
+                      {checkoutMailStatus.message}
+                    </p>
+                    {checkoutMailStatus.details && (
+                      <p className="text-[10px] opacity-85 leading-relaxed font-medium">
+                        {checkoutMailStatus.details}
+                      </p>
+                    )}
+                  </div>
+                )}
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
                   <button

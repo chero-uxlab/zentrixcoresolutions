@@ -38,6 +38,7 @@ const createMailTransporter = () => {
   const pass = process.env.SMTP_PASS;
 
   if (host && user && pass) {
+    console.log(`[SMTP] Initializing transporter using host=${host}, port=${port}, user=${user}`);
     return nodemailer.createTransport({
       host,
       port,
@@ -48,6 +49,7 @@ const createMailTransporter = () => {
       },
     });
   }
+  console.warn(`[SMTP Warning] Transporter is inactive. Missing SMTP credentials. host=${host || 'undefined'}, user=${user || 'undefined'}`);
   return null;
 };
 
@@ -232,10 +234,11 @@ app.post("/api/inquiry", async (req, res) => {
   }
 
   const receiverEmail = process.env.NOTIFICATION_RECEIVER || "chero.joen@gmail.com";
+  const recipients = Array.from(new Set([email, receiverEmail].map(e => e.trim()).filter(Boolean))).join(", ");
 
   const mailOptions = {
     from: process.env.SMTP_USER || "no-reply@zentrixcore.com",
-    to: receiverEmail,
+    to: recipients,
     subject: `🚨 [Zentrixcore Inquiry] ${priority ? priority.toUpperCase() : "ROUTINE"} - ${name} (${company || "Individual"})`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
@@ -288,7 +291,7 @@ app.post("/api/inquiry", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail(mailOptions);
-      console.log(`[SMTP] Inquiry Notification successfully delivered to: ${receiverEmail}`);
+      console.log(`[SMTP] Inquiry Notification successfully delivered to: ${recipients}`);
       res.json({ success: true, message: "Email notification dispatched successfully." });
     } catch (err: any) {
       console.error("[SMTP Error] Email delivery failed:", err);
@@ -314,6 +317,7 @@ app.post("/api/checkout", async (req, res) => {
 
   const orderId = `ZEN-2026-${Math.floor(Math.random() * 9000) + 1000}`;
   const receiverEmail = process.env.NOTIFICATION_RECEIVER || "chero.joen@gmail.com";
+  const recipients = Array.from(new Set([customerInfo.email, receiverEmail].map(e => e.trim()).filter(Boolean))).join(", ");
 
   const cartRows = cartItems.map(item => `
     <tr style="border-bottom: 1px solid #f1f5f9;">
@@ -329,7 +333,7 @@ app.post("/api/checkout", async (req, res) => {
 
   const mailOptions = {
     from: process.env.SMTP_USER || "no-reply@zentrixcore.com",
-    to: receiverEmail,
+    to: recipients,
     subject: `🛒 [Zentrixcore Purchase] Order #${orderId} - ${customerInfo.firstName} ${customerInfo.lastName}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);">
@@ -411,8 +415,8 @@ app.post("/api/checkout", async (req, res) => {
   if (transporter) {
     try {
       await transporter.sendMail(mailOptions);
-      console.log(`[SMTP] Order Confirmation successfully delivered to: ${receiverEmail}`);
-      res.json({ success: true, orderId, message: "Purchase order notified to administrator successfully." });
+      console.log(`[SMTP] Order Confirmation successfully delivered to: ${recipients}`);
+      res.json({ success: true, orderId, message: "Purchase order notified to administrator and client successfully." });
     } catch (err: any) {
       console.error("[SMTP Error] Checkout delivery failed:", err);
       res.status(500).json({ error: "SMTP transport delivery failed.", details: err.message });
