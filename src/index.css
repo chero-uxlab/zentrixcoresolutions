@@ -13,3 +13,41 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* Accessibility Utility Overrides */
+.accessibility-high-contrast {
+  filter: contrast(1.4) brightness(1.05) saturate(1.15) !important;
+}
+
+.accessibility-grayscale {
+  filter: grayscale(1) !important;
+}
+
+.accessibility-high-contrast.accessibility-grayscale {
+  filter: grayscale(1) contrast(1.5) brightness(1) !important;
+}
+
+/* Dyslexia friendly text enhancements */
+.accessibility-dyslexia * {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif !important;
+  letter-spacing: 0.15em !important;
+  word-spacing: 0.2em !important;
+  line-height: 1.8 !important;
+  font-weight: 500 !important;
+}
+
+/* Highlight Links & Interactive targets for low vision */
+.accessibility-highlight-links a,
+.accessibility-highlight-links button,
+.accessibility-highlight-links [role="button"] {
+  outline: 3px solid #f97316 !important;
+  outline-offset: 3px !important;
+}
+
+/* Reduced Motion for Vestibular disorders */
+.accessibility-reduce-motion * {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+

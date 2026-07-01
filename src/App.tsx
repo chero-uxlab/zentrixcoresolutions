@@ -22,6 +22,7 @@ import LiveChat from "./components/LiveChat";
 import CookieBanner from "./components/CookieBanner";
 import AboutSection from "./components/AboutSection";
 import MSPFeatures from "./components/MSPFeatures";
+import AccessibilityMenu from "./components/AccessibilityMenu";
 
 export default function App() {
   // Shopping Cart state
@@ -378,6 +379,9 @@ export default function App() {
           </motion.button>
         )}
       </AnimatePresence>
+
+      {/* 11.7 Universal Accessibility Toolbar */}
+      <AccessibilityMenu />
 
       {/* 12. Privacy cookie consent assurance */}
       <CookieBanner />
