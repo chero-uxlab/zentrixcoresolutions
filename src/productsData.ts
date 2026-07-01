@@ -2,183 +2,243 @@ import { ProductItem } from "./types";
 
 export const KSH_PRODUCTS: ProductItem[] = [
   {
-    id: "enterprise_rack_server",
-    name: "Enterprise Rack Server",
+    id: "hp_250_g9_laptop",
+    name: "HP 250 G9 Intel Core i3 Laptop",
     category: "Hardware",
-    price: 558870,
-    rating: 4.9,
-    description: "Dual Xeon Scalable processor rack server with 64GB RAM, 8x hot-swap drive bays, redundant power supplies.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80",
-    features: [
-      "Dual Xeon Scalable high-core CPU layout",
-      "64GB Enterprise ECC system memory",
-      "8x Hot-swappable 2.5\" drive trays",
-      "Redundant gold efficiency power supplies"
-    ]
-  },
-  {
-    id: "business_laptop_pro",
-    name: "Business Laptop Pro",
-    category: "Hardware",
-    price: 155870,
-    rating: 4.8,
-    description: "14\" business laptop with Intel Core i7, 16GB RAM, 512GB SSD, Windows 11 Pro, 3-year warranty. (Regular price: KSH 194,870)",
-    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&q=80",
-    features: [
-      "Latest Gen Intel Core i7 Processor",
-      "16GB High-Speed RAM & 512GB NVMe SSD",
-      "Pre-loaded with Windows 11 Pro licensed",
-      "3-Year next business day warranty SLA"
-    ]
-  },
-  {
-    id: "managed_network_switch",
-    name: "Managed Network Switch",
-    category: "Hardware",
-    price: 116870,
-    rating: 4.7,
-    description: "48-port Gigabit managed switch with 4x 10G SFP+ uplinks, Layer 2/3, PoE+ support, enterprise firmware.",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&q=80",
-    features: [
-      "48x Full Gigabit Ethernet ports",
-      "4x 10G SFP+ high-capacity fiber uplinks",
-      "Complete L2/L3 administration firmware",
-      "Full Power-over-Ethernet (PoE+) budget support"
-    ]
-  },
-  {
-    id: "enterprise_ups_3000",
-    name: "Enterprise UPS 3000VA",
-    category: "Hardware",
-    price: 194870,
-    rating: 4.9,
-    description: "Online double-conversion UPS with 3000VA capacity, LCD display, SNMP monitoring, rack/tower convertible.",
-    image: "https://images.unsplash.com/photo-1626262882042-fbf4512c7468?w=400&q=80",
-    features: [
-      "Double-conversion pure sine-wave output",
-      "3000VA / 2700W backup power capacity",
-      "SNMP network telemetry remote monitoring card",
-      "Dual form-factor Rack or Tower installation"
-    ]
-  },
-  {
-    id: "m365_business_premium",
-    name: "Microsoft 365 Business Premium",
-    category: "Software",
-    price: 34320,
-    rating: 4.8,
-    description: "Annual subscription for Microsoft 365 Business Premium including Office apps, Exchange, Teams, 1TB cloud. (Per user / year)",
-    image: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=400&q=80",
-    features: [
-      "Full offline Office applications suite",
-      "Exchange email box hosting (50GB per user)",
-      "Microsoft Teams collaboration with call routing",
-      "1TB secure OneDrive and SharePoint storage"
-    ]
-  },
-  {
-    id: "azure_credits",
-    name: "Azure Cloud Credits Pack",
-    category: "Software",
-    price: 65000,
-    rating: 4.9,
-    description: "Prepaid Azure cloud credits pack for VM hosting, storage, databases and cloud services. Scalable billing.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80",
-    features: [
-      "Prepaid computing credit allocations",
-      "Applicable for Azure VM and Database hosting",
-      "Enables continuous server scaling blocks",
-      "Includes architectural setup support hours"
-    ]
-  },
-  {
-    id: "enterprise_edr_suite",
-    name: "Enterprise EDR Suite",
-    category: "Security",
-    price: 7670,
-    rating: 4.9,
-    description: "Advanced endpoint detection and response platform with AI threat hunting, real-time monitoring, incident response. (Per endpoint / month)",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&q=80",
-    features: [
-      "Active behavioral AI threat intercepts",
-      "24/7/365 security operations backing",
-      "Automatic isolated network quarantine triggers",
-      "System baseline audits and ransomware rollbacks"
-    ]
-  },
-  {
-    id: "email_security_gateway",
-    name: "Email Security Gateway",
-    category: "Security",
-    price: 5460,
-    rating: 4.8,
-    description: "Cloud email security gateway with spam filtering, malware protection, data loss prevention, encryption. (Per user / month)",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400&q=80",
-    features: [
-      "Inbound spam and email malware filtering",
-      "Sandbox attachment scanning protocols",
-      "DKIM, SPF, and DMARC posture validations",
-      "Sensitive data loss protection outbound logs"
-    ]
-  },
-  {
-    id: "managed_it_support_pkg",
-    name: "Managed IT Support Package",
-    category: "Services",
-    price: 195000,
-    rating: 4.9,
-    description: "Monthly unlimited remote IT support, monitoring, patch management, help desk, and quarterly business reviews. (Per month)",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80",
-    features: [
-      "Unlimited remote desktop help desk support",
-      "Continuous server and active router monitoring",
-      "Automated system OS patches and optimizations",
-      "Predictive component wear indicator alerting"
-    ]
-  },
-  {
-    id: "cloud_migration_service",
-    name: "Cloud Migration Service Project",
-    category: "Services",
-    price: 455000,
-    rating: 4.8,
-    description: "Full cloud migration planning and execution including data migration, app rehosting, training, and support. (Flat rate)",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80",
-    features: [
-      "Readiness audits and budget optimization plans",
-      "Warm live database replication schedules",
-      "Zero downtime server migration cutovers",
-      "Comprehensive cloud security configurations"
-    ]
-  },
-  {
-    id: "multi_function_printer",
-    name: "Multi-Function Printer",
-    category: "Hardware",
-    price: 285870,
+    price: 41500,
     rating: 4.6,
-    description: "A3 color laser MFP with print, scan, copy, fax, duplex, wireless, 50ppm, enterprise management software.",
-    image: "https://images.unsplash.com/photo-1612815154858-60aa4c233ab0?w=400&q=80",
+    description: "15.6\" HD screen, Intel Core i3 processor, 8GB DDR4 RAM, 256GB NVMe SSD, Windows 11 Home, sleek Ash Gray finish. Perfect for daily office work.",
+    image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&q=80",
     features: [
-      "Heavy-duty A3 color laser print arrays",
-      "Fast 50 pages-per-minute active print velocity",
-      "Automatic duplex scan and copier feeder",
-      "Secure release print queue badge integrations"
+      "15.6 Inch High-Definition anti-glare screen",
+      "Intel Core i3 high efficiency processing core",
+      "8GB RAM + 256GB NVMe SSD rapid storage",
+      "Pre-loaded with genuine Windows 11 Home OS"
     ]
   },
   {
-    id: "firewall_appliance",
-    name: "Enterprise Firewall Appliance",
-    category: "Security",
-    price: 324870,
-    rating: 4.9,
-    description: "Next-gen firewall with UTM, VPN, intrusion prevention, web filtering, application control, central management. (Promo rate)",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&q=80",
+    id: "lenovo_ideapad_3",
+    name: "Lenovo IdeaPad 3 Intel Core i5 Laptop",
+    category: "Hardware",
+    price: 58450,
+    rating: 4.7,
+    description: "15.6\" Full HD laptop powered by Intel Core i5. Comes with 8GB RAM, 512GB ultra-fast SSD, and long-lasting battery life in Abyss Blue.",
+    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&q=80",
     features: [
-      "Deep packet perimeter threat inspection",
-      "Encrypted secure client-to-site IPsec VPNs",
-      "Automated active intrusion prevention systems",
-      "Granular web filters and app access rules"
+      "15.6\" Full HD (1920x1080) narrow bezel display",
+      "Powerful Intel Core i5 processor block",
+      "8GB DDR4 memory + 512GB ultra-speed SSD",
+      "Dolby Audio dual stereo acoustic speakers"
+    ]
+  },
+  {
+    id: "tplink_wr840n_router",
+    name: "TP-Link TL-WR840N Wireless N Router",
+    category: "Hardware",
+    price: 2150,
+    rating: 4.5,
+    description: "300Mbps wireless transmission rate ideal for both bandwidth sensitive tasks and basic work. Dual fixed omnidirectional antennas.",
+    image: "https://images.unsplash.com/photo-1631553127988-5f7242df0be5?w=500&q=80",
+    features: [
+      "300Mbps high velocity wireless data rate",
+      "Two high-gain antennas for wide coverage",
+      "Easy setup with Tether smartphone application",
+      "Supports Router, AP, and Range Extender modes"
+    ]
+  },
+  {
+    id: "seagate_expansion_1tb",
+    name: "Seagate Expansion 1TB External Hard Drive",
+    category: "Hardware",
+    price: 7499,
+    rating: 4.8,
+    description: "USB 3.0 portable external hard drive. Drag-and-drop file saving right out of the box, bus-powered via USB port.",
+    image: "https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?w=500&q=80",
+    features: [
+      "Sleek, lightweight pocket size casing",
+      "High speed USB 3.0 data synchronization",
+      "Drag-and-drop immediate plug-and-play",
+      "Compatible with Windows and macOS file formats"
+    ]
+  },
+  {
+    id: "logitech_mk270_combo",
+    name: "Logitech MK270 Wireless Keyboard & Mouse",
+    category: "Hardware",
+    price: 3850,
+    rating: 4.7,
+    description: "Long-range 2.4 GHz wireless keyboard and mouse set. Features 8 multimedia hotkeys and extended battery life with plug-and-forget receiver.",
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80",
+    features: [
+      "Secure, low latency 2.4 GHz wireless connection",
+      "Long range coverage up to 10 meters distance",
+      "Keyboard features 8 convenient media hotkeys",
+      "Extended battery lifespan (up to 36 months)"
+    ]
+  },
+  {
+    id: "epson_ecotank_l3210",
+    name: "Epson EcoTank L3210 InkTank Printer",
+    category: "Hardware",
+    price: 26999,
+    rating: 4.8,
+    description: "Multi-function 3-in-1 print, copy, and scan. Features ultra-low-cost ink tank technology with spill-free, key-locked bottles.",
+    image: "https://images.unsplash.com/photo-1612815154858-60aa4c233ab0?w=500&q=80",
+    features: [
+      "Integrated high-capacity spill-free ink tanks",
+      "Extremely low cost per print page ratio",
+      "Complete 3-in-1 Print, Scan, and Copy",
+      "Outstanding high print resolution of 5760 dpi"
+    ]
+  },
+  {
+    id: "sandisk_ultra_64gb",
+    name: "SanDisk Ultra Flair 64GB USB 3.0 Drive",
+    category: "Hardware",
+    price: 1399,
+    rating: 4.5,
+    description: "High-speed USB 3.0 performance of up to 150MB/s. Sleek, durable metal casing with secure files encryption tools.",
+    image: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=500&q=80",
+    features: [
+      "Blazing fast USB 3.0 transfer up to 150MB/s",
+      "Sleek, robust brushed-metal protective casing",
+      "Secure Access 128-bit file encryption software",
+      "Backward compatible with older USB 2.0 ports"
+    ]
+  },
+  {
+    id: "hikvision_webcam_u02",
+    name: "Hikvision DS-U02 1080P Full HD Webcam",
+    category: "Hardware",
+    price: 3200,
+    rating: 4.6,
+    description: "2 MP CMOS sensor providing high quality video at 1920x1080 resolution. Includes a built-in intelligent microphone.",
+    image: "https://images.unsplash.com/photo-1600541519463-ee3280145230?w=500&q=80",
+    features: [
+      "Stunning 1080P Full HD live streaming resolution",
+      "Smart low-light auto exposure adjustment",
+      "Integrated noise-reducing internal microphone",
+      "Flexible universal clip mount for monitors/laptops"
+    ]
+  },
+  {
+    id: "dell_se2422h_monitor",
+    name: "Dell SE2422H 24-Inch Full HD Monitor",
+    category: "Hardware",
+    price: 18900,
+    rating: 4.7,
+    description: "24\" screen with high quality LED backlight, 75Hz refresh rate, AMD FreeSync, and flicker-free screen protection.",
+    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80",
+    features: [
+      "Spacious 24-inch diagonal LED-backlit workspace",
+      "Ultra smooth 75Hz refresh rate with AMD FreeSync",
+      "Sleek compact stand to minimize desk clutter",
+      "TUV-certified comfort view eye protect mode"
+    ]
+  },
+  {
+    id: "apple_ipad_9th_gen",
+    name: "Apple iPad 10.2\" (9th Gen, 64GB, Wi-Fi)",
+    category: "Hardware",
+    price: 48999,
+    rating: 4.9,
+    description: "Features gorgeous Retina display, Apple A13 Bionic chip, 12MP ultra-wide front camera with Center Stage, and stereo speakers.",
+    image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80",
+    features: [
+      "Gorgeous 10.2\" Retina screen with True Tone",
+      "Powerful Apple A13 Bionic chip backend",
+      "64GB ultra-fast internal storage partition",
+      "12MP Ultra Wide front camera with Center Stage"
+    ]
+  },
+  {
+    id: "m365_personal_1yr",
+    name: "Microsoft 365 Personal (1-Year Liz)",
+    category: "Software",
+    price: 8500,
+    rating: 4.8,
+    description: "1-year license subscription for one user. Access premium Office apps (Word, Excel, PowerPoint) and 1TB of secure OneDrive storage.",
+    image: "https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=500&q=80",
+    features: [
+      "Full premium suite of Word, Excel, PowerPoint",
+      "1TB of secure OneDrive cloud backup storage",
+      "Continuous software feature & patch updates",
+      "Cross-platform compatibility for PC, Mac, Mobile"
+    ]
+  },
+  {
+    id: "kaspersky_is_3u_1yr",
+    name: "Kaspersky Internet Security (3 Users / 1-Yr)",
+    category: "Software",
+    price: 4200,
+    rating: 4.9,
+    description: "Award-winning internet safety pack for 3 devices. Shields personal devices from malware, ransomware, and phishing threats.",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&q=80",
+    features: [
+      "Triple device protection cover for PC, Mac, Android",
+      "Active webcam access protection locks",
+      "Safe Money banking encryption protection",
+      "Real-time ransomware threat hunter shield"
+    ]
+  },
+  {
+    id: "hikvision_ip_camera",
+    name: "Hikvision Outdoor Bullet IP Camera (2MP)",
+    category: "Security",
+    price: 5800,
+    rating: 4.7,
+    description: "2MP Full HD PoE bullet network camera. Complete weatherproof IP67 structure with 30m infrared range for night vision security.",
+    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&q=80",
+    features: [
+      "2.0 Megapixel high-definition video capture",
+      "Power-over-Ethernet (PoE) single wire design",
+      "IP67 dust and water extreme weatherproof seal",
+      "High capacity 30-meter infrared night sight"
+    ]
+  },
+  {
+    id: "dlink_4g_router",
+    name: "D-Link DWR-921 4G LTE Security Router",
+    category: "Security",
+    price: 9500,
+    rating: 4.6,
+    description: "Allows you to connect to worldwide mobile networks. Dual-active NAT and SPI firewalls keep networks protected.",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&q=80",
+    features: [
+      "Dual-active NAT and SPI firewall defenses",
+      "WPA/WPA2 encryption lock for secure connections",
+      "Failover WAN support for continuous line redundancy",
+      "Sim card integration for 4G backup data paths"
+    ]
+  },
+  {
+    id: "pc_install_service",
+    name: "PC On-Site Install & Config Service",
+    category: "Services",
+    price: 4500,
+    rating: 4.9,
+    description: "Zentricore certified tech dispatched to your business. Handles setup, software installation, system tuning, and domain linking.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&q=80",
+    features: [
+      "Personalized on-site installation and testing",
+      "Custom OS and core application packaging",
+      "Official active directory domain integration",
+      "Corporate network printer & share setups"
+    ]
+  },
+  {
+    id: "wifi_audit_service",
+    name: "Enterprise Wi-Fi Signal Audit Service",
+    category: "Services",
+    price: 15000,
+    rating: 4.8,
+    description: "Comprehensive radio analysis, cable sorting, signal heatmap tracing, channel optimizer, and coverage verification.",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&q=80",
+    features: [
+      "Comprehensive Wi-Fi channel & noise audit",
+      "Structured network cabinet cabling organization",
+      "Heatmap analysis of wireless coverage dead zones",
+      "Firmware patching and security posture locks"
     ]
   }
 ];
