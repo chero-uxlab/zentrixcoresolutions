@@ -15,6 +15,7 @@ import {
   Settings,
   CloudLightning,
   CheckCircle,
+  MessageCircle,
 } from "lucide-react";
 import { CartItem } from "../types";
 
@@ -96,18 +97,18 @@ export default function Navbar({
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex flex-wrap items-center gap-4 md:gap-6 justify-center sm:justify-start">
             <a
-              href="tel:+1234567890"
+              href="tel:+254723121163"
               className="flex items-center gap-1.5 hover:text-orange-400 transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-orange-400" />
-              <span>+1-234-567-890</span>
+              <span>+254 723 121 163</span>
             </a>
             <a
-              href="mailto:hello@zentricore.com"
+              href="mailto:zenrixcoreitsolutions.@gmail.com"
               className="flex items-center gap-1.5 hover:text-orange-400 transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-orange-400" />
-              <span>hello@zentricore.com</span>
+              <span>zenrixcoreitsolutions.@gmail.com</span>
             </a>
             {currentTime && (
               <span className="hidden md:flex items-center gap-1.5 text-slate-400 border-l border-white/10 pl-4 font-mono">
@@ -118,6 +119,15 @@ export default function Navbar({
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2.5">
+              <a 
+                href="https://wa.me/254723121163?text=Hello%20Zentricore%20IT%20Solutions,%20I'm%20interested%2520in%2520your%2520services." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-1 rounded text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1" 
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-4 h-4 fill-emerald-500/10 text-emerald-400" />
+              </a>
               <a href="#" className="p-1 rounded hover:text-teal-400 transition-colors" aria-label="Twitter">
                 <Twitter className="w-3.5 h-3.5" />
               </a>
@@ -663,12 +673,20 @@ export default function Navbar({
               </div>
 
               {/* Footer Panel */}
-              <div className="p-5 border-t border-slate-100 bg-slate-50 space-y-4">
+              <div className="p-5 border-t border-slate-100 bg-slate-50 space-y-3">
                 <a
-                  href="tel:+1234567890"
-                  className="w-full py-3 bg-teal-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-md flex items-center justify-center gap-2"
+                  href="tel:+254723121163"
+                  className="w-full py-2.5 bg-teal-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-md flex items-center justify-center gap-2 transition-all hover:bg-teal-500"
                 >
-                  <Phone className="w-4 h-4" /> Call +1-234-567-890
+                  <Phone className="w-4 h-4" /> Call 0723 121 163
+                </a>
+                <a
+                  href="https://wa.me/254723121163?text=Hello%20Zentricore%20IT%20Solutions,%20I'm%20interested%20in%20your%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-md flex items-center justify-center gap-2 transition-all hover:bg-emerald-500"
+                >
+                  <MessageCircle className="w-4 h-4 fill-white text-emerald-600" /> WhatsApp Chat
                 </a>
                 <p className="text-[10px] text-center text-slate-400">
                   Certified Corporate IT Support & Engineering.

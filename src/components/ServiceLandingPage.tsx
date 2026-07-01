@@ -123,10 +123,10 @@ export default function ServiceLandingPage({
               Get Service Proposal
             </button>
             <a
-              href="tel:+1234567890"
+              href="tel:+254723121163"
               className="px-6 py-3 bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center gap-2"
             >
-              <PhoneCall className="w-4 h-4 text-orange-400" /> Call +1-234-567-890
+              <PhoneCall className="w-4 h-4 text-orange-400" /> Call 0723 121 163
             </a>
           </div>
         </div>
@@ -286,10 +286,10 @@ export default function ServiceLandingPage({
               Request Free Proposal
             </button>
             <a
-              href="tel:+1234567890"
+              href="tel:+254723121163"
               className="px-6 py-3 bg-transparent hover:bg-white/5 border border-white/20 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all"
             >
-              +1-234-567-890
+              +254 723 121 163
             </a>
           </div>
 
