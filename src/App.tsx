@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Calculator as CalcIcon, Activity, Sparkles, Sliders, MessageCircle } from "lucide-react";
+import { Calculator as CalcIcon, Activity, Sparkles, Sliders, MessageCircle, ArrowUp } from "lucide-react";
 import { ProductItem, CartItem } from "./types";
 import { SERVICES } from "./data";
 
@@ -39,6 +39,22 @@ export default function App() {
 
   // Tools Tab Switcher: "calculator" or "diagnostics"
   const [activeSuiteTab, setActiveSuiteTab] = useState<"calculator" | "diagnostics">("calculator");
+
+  // Scroll to Top state
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Scroll Actions
   const handleScrollToElement = (id: string) => {
@@ -345,6 +361,23 @@ export default function App() {
           WhatsApp Chat
         </span>
       </a>
+
+      {/* 11.6 Floating Scroll to Top button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.8 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-24 right-6 z-45 p-3 bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white hover:text-teal-400 rounded-full shadow-2xl border border-slate-700/50 transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer flex items-center justify-center group"
+            title="Scroll to Top"
+            id="scroll-to-top-btn"
+          >
+            <ArrowUp className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* 12. Privacy cookie consent assurance */}
       <CookieBanner />
