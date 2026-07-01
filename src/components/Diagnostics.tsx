@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ShieldCheck, AlertTriangle, RefreshCw, ChevronRight, Activity, Clock, FileText } from "lucide-react";
+import { ShieldCheck, AlertTriangle, RefreshCw, ChevronRight, Activity, Clock, FileText, Cpu, CheckSquare, Sparkles } from "lucide-react";
 import { DIAGNOSTIC_QUESTIONS } from "../data";
 
 interface DiagnosticsProps {
@@ -11,6 +11,30 @@ export default function Diagnostics({ onScheduleEmergency }: DiagnosticsProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, { label: string; score: number }>>({});
   const [completed, setCompleted] = useState(false);
+  const [aiReport, setAiReport] = useState<any | null>(null);
+  const [loadingAi, setLoadingAi] = useState(false);
+
+  useEffect(() => {
+    if (completed) {
+      setLoadingAi(true);
+      fetch("/api/diagnose", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ answers }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setAiReport(data);
+          setLoadingAi(false);
+        })
+        .catch((err) => {
+          console.error("Failed to generate AI report:", err);
+          setLoadingAi(false);
+        });
+    } else {
+      setAiReport(null);
+    }
+  }, [completed, answers]);
 
   const currentQuestion = DIAGNOSTIC_QUESTIONS[currentQuestionIndex];
 
@@ -154,12 +178,118 @@ export default function Diagnostics({ onScheduleEmergency }: DiagnosticsProps) {
                 <div className="flex gap-2.5 items-start">
                   <FileText className="w-5 h-5 text-slate-400 mt-0.5" />
                   <div>
-                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Filter Hygiene</span>
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Last Audit / Patches</span>
                     <span className="text-xs font-semibold text-slate-700 block">
-                      {answers["filters"]?.label || "None"}
+                      {answers["maintenance"]?.label || "None"}
                     </span>
                   </div>
                 </div>
+              </div>
+
+              {/* AI Engineering Insights (Powered by Gemini) */}
+              <div className="border border-teal-100 bg-gradient-to-b from-teal-50/10 to-teal-50/40 rounded-2xl p-5 md:p-6 text-left space-y-5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-teal-600 animate-pulse" />
+                    <h5 className="font-extrabold text-slate-950 text-xs uppercase tracking-wider flex items-center gap-1.5">
+                      AI System Engineering Report <span className="text-[10px] text-teal-600 lowercase font-medium bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-100 font-mono">gemini-3.5-flash</span>
+                    </h5>
+                  </div>
+                  {loadingAi && (
+                    <div className="flex items-center gap-1.5 text-xs text-slate-400 font-semibold font-mono">
+                      <Cpu className="w-3.5 h-3.5 animate-spin text-teal-600" /> Calculating telemetry...
+                    </div>
+                  )}
+                </div>
+
+                {loadingAi ? (
+                  <div className="space-y-4 py-3">
+                    <div className="h-4 bg-slate-100 rounded-full w-2/3 animate-pulse" />
+                    <div className="h-16 bg-slate-100 rounded-xl w-full animate-pulse" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="h-20 bg-slate-100 rounded-xl animate-pulse" />
+                      <div className="h-20 bg-slate-100 rounded-xl animate-pulse" />
+                    </div>
+                  </div>
+                ) : aiReport ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="space-y-5"
+                  >
+                    {/* Header Row */}
+                    <div className="md:flex md:items-center justify-between gap-4 border-b border-teal-50 pb-4">
+                      <div>
+                        <span className="text-[10px] font-bold text-teal-600 uppercase tracking-widest block mb-0.5">Telemetry Diagnostic</span>
+                        <h6 className="font-extrabold text-slate-900 text-sm md:text-base tracking-tight leading-snug">
+                          {aiReport.riskTitle}
+                        </h6>
+                      </div>
+                      <div className="flex-shrink-0 mt-2 md:mt-0 bg-slate-900 text-white rounded-2xl px-4 py-3 border border-slate-800 flex flex-col items-center">
+                        <span className="text-[9px] uppercase font-bold text-teal-400 tracking-wider">Safety Rating</span>
+                        <span className="text-xl font-extrabold tracking-tighter text-white font-mono">{aiReport.safetyRating}</span>
+                      </div>
+                    </div>
+
+                    {/* Executive Summary */}
+                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                      {aiReport.analysisSummary}
+                    </p>
+
+                    {/* Two Column details: Root Causes and Checklist */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                      {/* Root Causes */}
+                      <div className="bg-white p-4 rounded-xl border border-slate-100 space-y-2.5">
+                        <h6 className="text-[10px] uppercase font-extrabold text-slate-400 tracking-wider flex items-center gap-1.5">
+                          <AlertTriangle className="w-3.5 h-3.5 text-amber-500" /> Root Cause Hypotheses
+                        </h6>
+                        <ul className="space-y-2">
+                          {aiReport.rootCauses?.map((cause: string, i: number) => (
+                            <li key={i} className="text-xs text-slate-700 font-semibold flex items-start gap-2">
+                              <span className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0" />
+                              <span>{cause}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Diagnostic Checklist */}
+                      <div className="bg-white p-4 rounded-xl border border-slate-100 space-y-2.5">
+                        <h6 className="text-[10px] uppercase font-extrabold text-slate-400 tracking-wider flex items-center gap-1.5">
+                          <CheckSquare className="w-3.5 h-3.5 text-teal-600" /> Custom System Checklist
+                        </h6>
+                        <ul className="space-y-2">
+                          {aiReport.dynamicChecklist?.map((step: string, i: number) => (
+                            <li key={i} className="text-xs text-slate-700 font-semibold flex items-start gap-2">
+                              <span className="text-teal-600 font-bold mt-0.5">✓</span>
+                              <span>{step}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Cost Estimate and Action recommendation */}
+                    <div className="p-4 bg-teal-500/5 rounded-xl border border-teal-500/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                      <div className="space-y-1">
+                        <span className="text-[9px] uppercase font-bold text-slate-400 tracking-widest block">Cost Projection</span>
+                        <p className="text-xs font-extrabold text-slate-900 font-mono">
+                          {aiReport.pricingEstimate}
+                        </p>
+                      </div>
+                      <div className="flex-1 max-w-md text-left md:text-right">
+                        <span className="text-[9px] uppercase font-bold text-slate-400 tracking-widest block mb-0.5">CTO Recommendation</span>
+                        <p className="text-[11px] text-slate-600 font-semibold leading-relaxed">
+                          {aiReport.recommendation}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <div className="text-center py-4 bg-white/50 rounded-xl border border-dashed border-slate-100">
+                    <p className="text-xs text-slate-400 font-medium">Failed to calculate telemetry analysis. Please try resetting.</p>
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-100">

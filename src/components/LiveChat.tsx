@@ -32,24 +32,48 @@ export default function LiveChat() {
     }
   }, [messages, isOpen, isTyping]);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!inputVal.trim()) return;
 
     const userMsg = inputVal.trim();
     const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-    setMessages((prev) => [
-      ...prev,
+    const updatedMessages: Message[] = [
+      ...messages,
       { sender: "user", text: userMsg, time: now },
-    ]);
+    ];
+
+    setMessages(updatedMessages);
     setInputVal("");
 
-    // Simulate Agent response with typing delay
+    // Call Gemini API with typing delay
     setIsTyping(true);
-    setTimeout(() => {
-      setIsTyping(false);
-      let replyText = "Thank you for sharing. A certified systems administrator has been assigned to your query and will reach out via the inquiry form below shortly!";
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ messages: updatedMessages.map(m => ({ sender: m.sender, text: m.text })) }),
+      });
       
+      const data = await response.json();
+      setIsTyping(false);
+
+      if (data.text) {
+        setMessages((prev) => [
+          ...prev,
+          { sender: "agent", text: data.text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) },
+        ]);
+      } else {
+        throw new Error(data.error || "Invalid API response");
+      }
+    } catch (err) {
+      console.error("LiveChat API Error:", err);
+      setIsTyping(false);
+      
+      // Fallback
+      let replyText = "Thank you for sharing. A certified systems administrator has been assigned to your query and will reach out via the inquiry form below shortly!";
       const lower = userMsg.toLowerCase();
       if (lower.includes("price") || lower.includes("cost") || lower.includes("how much")) {
         replyText = "Our hardware catalog and subscription licensing are listed in Kenyan Shillings (KSH) in our IT Shop on this page! You can add items directly to your cart and initiate a checkout proposal instantly.";
@@ -63,7 +87,7 @@ export default function LiveChat() {
         ...prev,
         { sender: "agent", text: replyText, time: "Just now" },
       ]);
-    }, 1800);
+    }
   };
 
   return (

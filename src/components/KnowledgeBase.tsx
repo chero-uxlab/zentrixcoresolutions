@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Search, BookOpen, Server, Shield, Cloud, HardDrive, Phone, Laptop, Key, ClipboardCheck, ArrowRight, Clock, Eye, ChevronRight } from "lucide-react";
+import { Search, BookOpen, Server, Shield, Cloud, HardDrive, Phone, Laptop, Key, ClipboardCheck, ArrowRight, Clock, Eye, ChevronRight, Sparkles, Cpu } from "lucide-react";
 
 interface Article {
   id: string;
@@ -93,6 +93,34 @@ export default function KnowledgeBase() {
   const [selectedCat, setSelectedCat] = useState("all");
   const [readingArticle, setReadingArticle] = useState<Article | null>(null);
 
+  const [aiQuery, setAiQuery] = useState("");
+  const [aiResponse, setAiResponse] = useState("");
+  const [loadingAi, setLoadingAi] = useState(false);
+
+  const handleAskAi = async () => {
+    if (!aiQuery.trim()) return;
+    setLoadingAi(true);
+    setAiResponse("");
+    try {
+      const response = await fetch("/api/kb-ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: aiQuery }),
+      });
+      const data = await response.json();
+      if (data.text) {
+        setAiResponse(data.text);
+      } else {
+        throw new Error(data.error || "No response received");
+      }
+    } catch (err) {
+      console.error("Failed to query AI Architect:", err);
+      setAiResponse("Zentricore systems are highly available. If the AI endpoint is experiencing temporary latency, please contact our support department using our primary contact forms below for certified blueprints.");
+    } finally {
+      setLoadingAi(false);
+    }
+  };
+
   const filteredArticles = ARTICLES.filter((art) => {
     const matchesSearch =
       art.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -138,6 +166,60 @@ export default function KnowledgeBase() {
               Clear
             </button>
           )}
+        </div>
+
+        {/* Zentricore AI Systems Architect Tool */}
+        <div className="max-w-xl mx-auto bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 rounded-3xl p-5 border border-teal-500/10 shadow-lg text-white space-y-4">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-teal-400 animate-pulse" />
+            <h4 className="text-xs uppercase font-extrabold tracking-widest text-teal-300">
+              Ask Zentricore's AI Systems Architect
+            </h4>
+          </div>
+          <p className="text-[11px] text-slate-300 font-semibold leading-relaxed">
+            Need custom technical calculations, standard sizing advice, or wiring guidelines? Ask our Principal Architect directly.
+          </p>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              placeholder="e.g., How do I size a precision cooling unit for a 15kW rack?"
+              value={aiQuery}
+              onChange={(e) => setAiQuery(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter") handleAskAi(); }}
+              className="flex-1 px-4 py-2.5 rounded-xl bg-white/10 border border-white/10 text-xs focus:outline-none focus:ring-1 focus:ring-teal-400 text-white placeholder:text-slate-400 font-medium"
+            />
+            <button
+              onClick={handleAskAi}
+              disabled={loadingAi}
+              className="px-4 py-2 bg-teal-500 hover:bg-teal-600 active:bg-teal-700 disabled:opacity-50 text-slate-950 text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-1.5 flex-shrink-0"
+            >
+              {loadingAi ? <Cpu className="w-3.5 h-3.5 animate-spin" /> : <ArrowRight className="w-3.5 h-3.5" />} Ask Architect
+            </button>
+          </div>
+
+          <AnimatePresence>
+            {aiResponse && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                className="bg-black/40 border border-white/5 p-4 rounded-xl space-y-2.5"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-[9px] uppercase font-bold text-teal-400 tracking-widest">Architect Response</span>
+                  <button
+                    onClick={() => setAiResponse("")}
+                    className="text-[10px] text-slate-400 hover:text-white font-semibold uppercase"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <p className="text-xs text-slate-200 leading-relaxed font-semibold whitespace-pre-wrap">
+                  {aiResponse}
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Grid of Categories */}
