@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "motion/react";
 import {
   Phone,
   Mail,
-  Twitter,
   Facebook,
   Linkedin,
   Instagram,
@@ -104,11 +103,11 @@ export default function Navbar({
               <span>+254 723 121 163</span>
             </a>
             <a
-              href="mailto:zenrixcoreitsolutions.@gmail.com"
+              href="mailto:zentrixcoreitsolutions@gmail.com"
               className="flex items-center gap-1.5 hover:text-orange-400 transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-orange-400" />
-              <span>zenrixcoreitsolutions.@gmail.com</span>
+              <span>zentrixcoreitsolutions@gmail.com</span>
             </a>
             {currentTime && (
               <span className="hidden md:flex items-center gap-1.5 text-slate-400 border-l border-white/10 pl-4 font-mono">
@@ -128,8 +127,16 @@ export default function Navbar({
               >
                 <MessageCircle className="w-4 h-4 fill-emerald-500/10 text-emerald-400" />
               </a>
-              <a href="#" className="p-1 rounded hover:text-teal-400 transition-colors" aria-label="Twitter">
-                <Twitter className="w-3.5 h-3.5" />
+              <a 
+                href="https://x.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-1 rounded hover:text-teal-400 transition-colors" 
+                aria-label="X (formerly Twitter)"
+              >
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
               <a href="#" className="p-1 rounded hover:text-teal-400 transition-colors" aria-label="Facebook">
                 <Facebook className="w-3.5 h-3.5" />

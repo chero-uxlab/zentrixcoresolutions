@@ -150,19 +150,19 @@ export default function Footer({
                 </div>
               </li>
               <li className="flex items-center gap-2.5">
-                <MessageCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <MessageCircle className="w-4 h-4 text-orange-400 flex-shrink-0" />
                 <a 
                   href="https://wa.me/254723121163?text=Hello%20Zentricore%20IT%20Solutions,%20I'm%20interested%20in%20your%20services." 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="hover:text-white font-semibold text-emerald-400 flex items-center gap-1"
+                  className="hover:text-white font-semibold text-slate-300 flex items-center gap-1"
                 >
                   WhatsApp: 0723 121 163
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                <a href="mailto:zenrixcoreitsolutions.@gmail.com" className="hover:text-white font-semibold">zenrixcoreitsolutions.@gmail.com</a>
+                <a href="mailto:zentrixcoreitsolutions@gmail.com" className="hover:text-white font-semibold">zentrixcoreitsolutions@gmail.com</a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-orange-400 mt-0.5 flex-shrink-0" />
