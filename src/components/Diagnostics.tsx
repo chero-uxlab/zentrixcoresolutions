@@ -92,7 +92,7 @@ export default function Diagnostics({ onScheduleEmergency }: DiagnosticsProps) {
         <div className="flex items-center gap-3">
           <Activity className="w-6 h-6 text-teal-400" />
           <div>
-            <h3 className="font-bold text-lg">Zentricore IT & HVAC Diagnostics</h3>
+            <h3 className="font-bold text-lg">Zentrixcore IT & HVAC Diagnostics</h3>
             <p className="text-xs text-slate-400">Interactive Air Conditioning Health Check</p>
           </div>
         </div>

@@ -6,7 +6,7 @@ export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("zentricore_cookie_consent");
+    const consent = localStorage.getItem("zentrixcore_cookie_consent");
     if (!consent) {
       const timer = setTimeout(() => {
         setIsVisible(true);
@@ -17,7 +17,7 @@ export default function CookieBanner() {
 
   const handleAccept = () => {
     localStorage.setItem(
-      "zentricore_cookie_consent",
+      "zentrixcore_cookie_consent",
       JSON.stringify({ accepted: true, date: new Date().toISOString() })
     );
     setIsVisible(false);
@@ -25,7 +25,7 @@ export default function CookieBanner() {
 
   const handleDecline = () => {
     localStorage.setItem(
-      "zentricore_cookie_consent",
+      "zentrixcore_cookie_consent",
       JSON.stringify({ accepted: false, date: new Date().toISOString() })
     );
     setIsVisible(false);

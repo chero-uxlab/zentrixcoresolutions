@@ -26,7 +26,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50 border-y border-slate-100 scroll-mt-20" id="zentricore-about">
+    <section className="py-20 bg-slate-50 border-y border-slate-100 scroll-mt-20" id="zentrixcore-about">
       <div className="max-w-7xl mx-auto px-4">
         {/* Split Header layout with themed image */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
@@ -38,7 +38,7 @@ export default function AboutSection() {
               We Help Organizations Scale Their Operations via IT Solutions
             </h2>
             <p className="text-sm sm:text-base text-slate-600 font-sans leading-relaxed">
-              Zentricore IT Solutions is an IT Managed Service Provider, delivering Enterprise IT Services and Business IT solutions globally. Incorporating the best skills, expertise and technologies, we maximize efficiency and returns through technology investments.
+              Zentrixcore IT Solutions is an IT Managed Service Provider, delivering Enterprise IT Services and Business IT solutions globally. Incorporating the best skills, expertise and technologies, we maximize efficiency and returns through technology investments.
             </p>
             <p className="text-xs sm:text-sm text-slate-500 font-sans leading-relaxed">
               We understand each business is dynamic with varying needs, from organizations with simple IT requirements to giant corporations with complex IT needs. Our customized system design process guarantees seamless scaling with absolute cybersecurity defense.
@@ -70,7 +70,7 @@ export default function AboutSection() {
               <div className="relative bg-white rounded-2xl overflow-hidden border border-slate-150 shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
-                  alt="Zentricore Managed IT Engineering Team"
+                  alt="Zentrixcore Managed IT Engineering Team"
                   referrerPolicy="no-referrer"
                   className="w-full h-[320px] object-cover hover:scale-105 transition-transform duration-500"
                 />

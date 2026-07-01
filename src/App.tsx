@@ -214,7 +214,7 @@ export default function App() {
                 {/* Centered Tab Control Panel */}
                 <div className="text-center max-w-lg mx-auto space-y-4">
                   <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
-                    <Sliders className="w-3.5 h-3.5" /> Zentricore Interactive Suite
+                    <Sliders className="w-3.5 h-3.5" /> Zentrixcore Interactive Suite
                   </span>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 uppercase">
                     Configure & Diagnose Systems
@@ -329,7 +329,7 @@ export default function App() {
 
       {/* 11.5 Floating WhatsApp Support button */}
       <a
-        href="https://wa.me/254723121163?text=Hello%20Zentricore%20IT%20Solutions,%20I'm%20interested%20in%20your%20services."
+        href="https://wa.me/254723121163?text=Hello%20Zentrixcore%20IT%20Solutions,%20I'm%20interested%20in%20your%20services."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-45 flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 group border border-emerald-500/30"

@@ -713,7 +713,7 @@ export const KSH_PRODUCTS: ProductItem[] = [
     category: "Services",
     price: 4500,
     rating: 4.9,
-    description: "Zentricore certified tech dispatched to your business. Handles setup, software installation, system tuning, and domain linking.",
+    description: "Zentrixcore certified tech dispatched to your business. Handles setup, software installation, system tuning, and domain linking.",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&q=80",
     features: [
       "Personalized on-site installation and testing",

@@ -68,7 +68,7 @@ export default function ServiceLandingPage({
 
   // Custom testimonials per service
   const baseTestimonial = {
-    text: `The team at ZENTRICORE configured our ${service.title} without any disruption to our daily operations. Their attention to detail, proactive response SLA, and professionalism are unmatched.`,
+    text: `The team at ZENTRIXCORE configured our ${service.title} without any disruption to our daily operations. Their attention to detail, proactive response SLA, and professionalism are unmatched.`,
     author: "James Mwangi",
     role: `IT Director, Corporate Logistics`,
     avatar: "JM"
@@ -92,7 +92,7 @@ export default function ServiceLandingPage({
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </button>
           <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest hidden md:block">
-            ZENTRICORE &gt; {service.category.toUpperCase()} &gt; <span className="text-teal-700">{service.title}</span>
+            ZENTRIXCORE &gt; {service.category.toUpperCase()} &gt; <span className="text-teal-700">{service.title}</span>
           </div>
         </div>
       </div>

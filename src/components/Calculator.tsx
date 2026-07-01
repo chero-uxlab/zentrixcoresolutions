@@ -305,7 +305,7 @@ export default function Calculator({ onPreFillContact }: CalculatorProps) {
             {/* Dynamic context warning info box */}
             <div className="p-3 bg-teal-50 border border-teal-100 rounded-xl">
               <p className="text-[11px] text-teal-900 leading-normal">
-                <strong>ZENTRICORE Impact:</strong> Consolidating your hardware procurement, MSP helpdesk, security layers, and HVAC servicing under one SLA saves an average of <strong>18%</strong> on total capital expenditure.
+                <strong>ZENTRIXCORE Impact:</strong> Consolidating your hardware procurement, MSP helpdesk, security layers, and HVAC servicing under one SLA saves an average of <strong>18%</strong> on total capital expenditure.
               </p>
             </div>
           </div>

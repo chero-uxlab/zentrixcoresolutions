@@ -68,7 +68,7 @@ app.post("/api/chat", async (req, res) => {
   if (!ai) {
     // Graceful fallback when API key is missing
     const lastMsg = messages[messages.length - 1]?.text?.toLowerCase() || "";
-    let mockReply = "Hello! Zentricore Support here. We are happy to assist you with IT Infra, Cloud, or climate cooling HVAC systems. Please complete our Diagnostics panel or contact us using our inquiry forms.";
+    let mockReply = "Hello! Zentrixcore Support here. We are happy to assist you with IT Infra, Cloud, or climate cooling HVAC systems. Please complete our Diagnostics panel or contact us using our inquiry forms.";
     if (lastMsg.includes("price") || lastMsg.includes("cost")) {
       mockReply = "Our enterprise components, licensing, and systems hardware catalogs are listed in Kenya Shillings (KSH) in our IT Shop on this page. Feel free to add components to your proposal!";
     }
@@ -89,9 +89,9 @@ app.post("/api/chat", async (req, res) => {
       contents: formattedHistory,
       config: {
         systemInstruction:
-          "You are Joan, a highly certified, enterprise systems administrator and climate engineer at Zentricore IT Solutions. " +
+          "You are Joan, a highly certified, enterprise systems administrator and climate engineer at Zentrixcore IT Solutions. " +
           "Your tone should be authoritative, highly professional, technically precise (using concepts like server clusters, active directory, CASB policies, structured cabling, precision CRAC systems, or VRF refrigeration), yet approachable. " +
-          "Focus on explaining Zentricore's turn-key engineering solutions. Guide the customer toward filling out our customized system proposals or scheduling on-site dispatches.",
+          "Focus on explaining Zentrixcore's turn-key engineering solutions. Guide the customer toward filling out our customized system proposals or scheduling on-site dispatches.",
       },
     });
 
@@ -126,7 +126,7 @@ app.post("/api/diagnose", async (req, res) => {
         "Safely power cycle the unit thermostat or network switch",
         "Inspect the physical filters for excessive debris or dust buildup",
         "Verify standard utility electrical line levels and breaker fuses",
-        "Schedule a comprehensive Zentricore systems audit"
+        "Schedule a comprehensive Zentrixcore systems audit"
       ],
       pricingEstimate: "Approx. 5,000 KSH - 15,000 KSH depending on replacement components",
       recommendation: "Please book a certified technician to inspect your configuration and verify system thresholds.",
@@ -176,7 +176,7 @@ Calculate risk, safety rating, analyze potential root causes, provide a custom t
           ],
         },
         systemInstruction:
-          "You are the Chief Technology Officer and Principal Environmental HVAC Engineer at Zentricore IT Solutions. " +
+          "You are the Chief Technology Officer and Principal Environmental HVAC Engineer at Zentrixcore IT Solutions. " +
           "Your job is to read user-submitted symptom checks (whether IT network dropouts, high thermal server slowdowns, server room HVAC cooling failures, or cybersecurity alerts) " +
           "and generate a robust, certified, deep analytical report in JSON format. Provide highly technical, realistic feedback that builds authority.",
       },
@@ -200,7 +200,7 @@ app.post("/api/kb-ask", async (req, res) => {
 
   if (!ai) {
     return res.json({
-      text: "[MOCK MODE - Please configure GEMINI_API_KEY to search our AI index] Zentricore's systems catalog recommends standard structured layouts, Category 6A cabling, and precision CRAC airflow design. Please look at our listed articles below for specific procedures.",
+      text: "[MOCK MODE - Please configure GEMINI_API_KEY to search our AI index] Zentrixcore's systems catalog recommends standard structured layouts, Category 6A cabling, and precision CRAC airflow design. Please look at our listed articles below for specific procedures.",
     });
   }
 
@@ -210,7 +210,7 @@ app.post("/api/kb-ask", async (req, res) => {
       contents: `Client Question: "${query}"\n\nProvide a technical response citing relevant structural standards, checklists, or steps.`,
       config: {
         systemInstruction:
-          "You are the Principal Systems Architect at Zentricore IT Solutions. " +
+          "You are the Principal Systems Architect at Zentrixcore IT Solutions. " +
           "Provide highly descriptive, structured, professional step-by-step guidance on complex IT topology, fiber optics, Active Directory forests, server room environmental control, or commercial VRF/split HVAC layouts. " +
           "Include bullet points and cite standards like TIA-568, ASHRAE, or ISO. Keep your output to ~200 words max.",
       },
@@ -234,13 +234,13 @@ app.post("/api/inquiry", async (req, res) => {
   const receiverEmail = process.env.NOTIFICATION_RECEIVER || "chero.joen@gmail.com";
 
   const mailOptions = {
-    from: process.env.SMTP_USER || "no-reply@zentricore.com",
+    from: process.env.SMTP_USER || "no-reply@zentrixcore.com",
     to: receiverEmail,
-    subject: `🚨 [Zentricore Inquiry] ${priority ? priority.toUpperCase() : "ROUTINE"} - ${name} (${company || "Individual"})`,
+    subject: `🚨 [Zentrixcore Inquiry] ${priority ? priority.toUpperCase() : "ROUTINE"} - ${name} (${company || "Individual"})`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
         <div style="background: linear-gradient(135deg, #0f172a 0%, #0d9488 100%); padding: 24px; color: white;">
-          <h2 style="margin: 0; font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Zentricore IT Solutions</h2>
+          <h2 style="margin: 0; font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Zentrixcore IT Solutions</h2>
           <p style="margin: 4px 0 0 0; font-size: 12px; color: #ccfbf1; font-weight: 600;">NEW LEAD INQUIRY & DISPATCH RECORD</p>
         </div>
         <div style="padding: 24px; background: #ffffff; color: #334155; line-height: 1.6;">
@@ -278,7 +278,7 @@ app.post("/api/inquiry", async (req, res) => {
           </blockquote>
         </div>
         <div style="background-color: #f8fafc; padding: 16px 24px; text-align: center; border-top: 1px solid #f1f5f9; font-size: 11px; color: #94a3b8; font-weight: 600;">
-          This inquiry was dispatched directly from the Zentricore Portal.
+          This inquiry was dispatched directly from the Zentrixcore Portal.
         </div>
       </div>
     `
@@ -328,16 +328,16 @@ app.post("/api/checkout", async (req, res) => {
   `).join("");
 
   const mailOptions = {
-    from: process.env.SMTP_USER || "no-reply@zentricore.com",
+    from: process.env.SMTP_USER || "no-reply@zentrixcore.com",
     to: receiverEmail,
-    subject: `🛒 [Zentricore Purchase] Order #${orderId} - ${customerInfo.firstName} ${customerInfo.lastName}`,
+    subject: `🛒 [Zentrixcore Purchase] Order #${orderId} - ${customerInfo.firstName} ${customerInfo.lastName}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);">
         <div style="background: linear-gradient(135deg, #0f172a 0%, #115e59 100%); padding: 28px; color: white;">
           <table style="width: 100%;">
             <tr>
               <td>
-                <h2 style="margin: 0; font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px;">Zentricore IT Solutions</h2>
+                <h2 style="margin: 0; font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px;">Zentrixcore IT Solutions</h2>
                 <p style="margin: 4px 0 0 0; font-size: 12px; color: #2dd4bf; font-weight: 700;">CONFIRMED ENTERPRISE PROCUREMENT ORDER</p>
               </td>
               <td style="text-align: right; vertical-align: middle;">
@@ -401,7 +401,7 @@ app.post("/api/checkout", async (req, res) => {
         </div>
         
         <div style="background-color: #f8fafc; padding: 20px 28px; text-align: center; border-top: 1px solid #f1f5f9; font-size: 11px; color: #94a3b8; font-weight: 600;">
-          This procurement ticket was submitted on the Zentricore Enterprise IT Shop.
+          This procurement ticket was submitted on the Zentrixcore Enterprise IT Shop.
         </div>
       </div>
     `

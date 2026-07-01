@@ -119,7 +119,7 @@ export default function Navbar({
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2.5">
               <a 
-                href="https://wa.me/254723121163?text=Hello%20Zentricore%20IT%20Solutions,%20I'm%20interested%2520in%2520your%2520services." 
+                href="https://wa.me/254723121163?text=Hello%20Zentrixcore%20IT%20Solutions,%20I'm%20interested%2520in%2520your%2520services." 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="p-1 rounded text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1" 
@@ -169,13 +169,13 @@ export default function Navbar({
           <button onClick={() => handleServiceSelect(null)} className="flex items-center gap-3 group text-left">
             <img 
               src="https://cdn.oreateai.com/aiimage/upload/3f836624f12288644ee1490b/38f73a8810f84f40b1c731f8556948c1.png" 
-              alt="Zentricore IT Solutions" 
+              alt="Zentrixcore IT Solutions" 
               referrerPolicy="no-referrer"
               className="h-11 w-auto rounded-lg object-contain group-hover:scale-105 transition-transform duration-300"
             />
             <div className="flex flex-col">
               <span className="text-lg font-extrabold text-slate-900 tracking-wider leading-none font-sans group-hover:text-teal-700 transition-colors">
-                ZENTRICORE
+                ZENTRIXCORE
               </span>
               <span className="text-[9px] font-semibold text-slate-400 tracking-wider uppercase mt-1 leading-none">
                 IT Solutions Private Ltd
@@ -474,11 +474,11 @@ export default function Navbar({
                 <div className="flex items-center gap-2">
                   <img 
                     src="https://cdn.oreateai.com/aiimage/upload/3f836624f12288644ee1490b/38f73a8810f84f40b1c731f8556948c1.png" 
-                    alt="Zentricore IT Solutions" 
+                    alt="Zentrixcore IT Solutions" 
                     referrerPolicy="no-referrer"
                     className="h-7 w-auto object-contain"
                   />
-                  <span className="font-bold text-slate-900 text-sm">ZENTRICORE Menu</span>
+                  <span className="font-bold text-slate-900 text-sm">ZENTRIXCORE Menu</span>
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
@@ -688,7 +688,7 @@ export default function Navbar({
                   <Phone className="w-4 h-4" /> Call 0723 121 163
                 </a>
                 <a
-                  href="https://wa.me/254723121163?text=Hello%20Zentricore%20IT%20Solutions,%20I'm%20interested%20in%20your%20services."
+                  href="https://wa.me/254723121163?text=Hello%20Zentrixcore%20IT%20Solutions,%20I'm%20interested%20in%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-2.5 bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-md flex items-center justify-center gap-2 transition-all hover:bg-emerald-500"

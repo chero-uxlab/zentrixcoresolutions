@@ -27,7 +27,7 @@ export default function TestimonialsAndFaq() {
               ))}
             </div>
             <p className="text-sm text-slate-600 italic leading-relaxed mb-4">
-              "ZENTRICORE transformed our office climate control. The VRF system installation was seamless, and our energy bills dropped by 35%. Their engineering team was professional from start to finish."
+              "ZENTRIXCORE transformed our office climate control. The VRF system installation was seamless, and our energy bills dropped by 35%. Their engineering team was professional from start to finish."
             </p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-xs">

@@ -59,7 +59,7 @@ export default function Hero({ onScrollToCalculator, onScrollToContact }: HeroPr
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-sans leading-relaxed"
         >
-          Zentricore IT Solutions deliver cutting-edge Enterprise IT Services by providing IT Infrastructure, Unified Communications, Cloud Solutions, Managed Backup, Business Continuity, & IT Consulting Solutions.
+          Zentrixcore IT Solutions deliver cutting-edge Enterprise IT Services by providing IT Infrastructure, Unified Communications, Cloud Solutions, Managed Backup, Business Continuity, & IT Consulting Solutions.
         </motion.p>
 
         {/* Call to Actions */}
@@ -71,7 +71,7 @@ export default function Hero({ onScrollToCalculator, onScrollToContact }: HeroPr
         >
           <button
             onClick={() => {
-              const el = document.getElementById("zentricore-about");
+              const el = document.getElementById("zentrixcore-about");
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
             className="px-6 py-3.5 bg-teal-600 hover:bg-teal-500 text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-lg shadow-teal-600/30 hover:shadow-teal-500/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group"
@@ -97,7 +97,7 @@ export default function Hero({ onScrollToCalculator, onScrollToContact }: HeroPr
           className="pt-8"
         >
           <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-full text-xs text-slate-400 font-medium">
-            <span className="hover:text-white transition-colors cursor-pointer">Zentricore</span>
+            <span className="hover:text-white transition-colors cursor-pointer">Zentrixcore</span>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
             <span className="hover:text-white transition-colors cursor-pointer">IT & Climate Systems</span>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600" />

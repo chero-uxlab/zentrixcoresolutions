@@ -115,7 +115,7 @@ export default function KnowledgeBase() {
       }
     } catch (err) {
       console.error("Failed to query AI Architect:", err);
-      setAiResponse("Zentricore systems are highly available. If the AI endpoint is experiencing temporary latency, please contact our support department using our primary contact forms below for certified blueprints.");
+      setAiResponse("Zentrixcore systems are highly available. If the AI endpoint is experiencing temporary latency, please contact our support department using our primary contact forms below for certified blueprints.");
     } finally {
       setLoadingAi(false);
     }
@@ -137,7 +137,7 @@ export default function KnowledgeBase() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
-            <BookOpen className="w-3.5 h-3.5" /> Zentricore IT Help Center
+            <BookOpen className="w-3.5 h-3.5" /> Zentrixcore IT Help Center
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight uppercase">
             Knowledge Base
@@ -168,12 +168,12 @@ export default function KnowledgeBase() {
           )}
         </div>
 
-        {/* Zentricore AI Systems Architect Tool */}
+        {/* Zentrixcore AI Systems Architect Tool */}
         <div className="max-w-xl mx-auto bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 rounded-3xl p-5 border border-teal-500/10 shadow-lg text-white space-y-4">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-teal-400 animate-pulse" />
             <h4 className="text-xs uppercase font-extrabold tracking-widest text-teal-300">
-              Ask Zentricore's AI Systems Architect
+              Ask Zentrixcore's AI Systems Architect
             </h4>
           </div>
           <p className="text-[11px] text-slate-300 font-semibold leading-relaxed">

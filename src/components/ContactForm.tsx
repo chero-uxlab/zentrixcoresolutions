@@ -122,7 +122,7 @@ export default function ContactForm({ preFilledMessage }: ContactFormProps) {
             </div>
 
             <p className="text-[10px] text-slate-500 font-medium">
-              * By clicking submit, you authorize Zentricore engineering teams to call the specified phone number to finalize site layouts.
+              * By clicking submit, you authorize Zentrixcore engineering teams to call the specified phone number to finalize site layouts.
             </p>
           </div>
 

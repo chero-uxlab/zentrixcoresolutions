@@ -102,7 +102,7 @@ export default function Footer({
             <ul className="space-y-2 text-xs">
               <li>
                 <a href="#" className="hover:text-white transition-colors flex items-center gap-1.5 font-medium">
-                  <ChevronRight className="w-3.5 h-3.5 text-teal-500" /> About Zentricore
+                  <ChevronRight className="w-3.5 h-3.5 text-teal-500" /> About Zentrixcore
                 </a>
               </li>
               <li>
@@ -152,7 +152,7 @@ export default function Footer({
               <li className="flex items-center gap-2.5">
                 <MessageCircle className="w-4 h-4 text-orange-400 flex-shrink-0" />
                 <a 
-                  href="https://wa.me/254723121163?text=Hello%20Zentricore%20IT%20Solutions,%20I'm%20interested%20in%20your%20services." 
+                  href="https://wa.me/254723121163?text=Hello%20Zentrixcore%20IT%20Solutions,%20I'm%20interested%20in%20your%20services." 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-white font-semibold text-slate-300 flex items-center gap-1"
@@ -173,13 +173,13 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* Col 4: About ZENTRICORE (3 cols) */}
+          {/* Col 4: About ZENTRIXCORE (3 cols) */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-widest text-orange-400">
-              About ZENTRICORE
+              About ZENTRIXCORE
             </h4>
             <p className="text-xs text-slate-400 leading-relaxed font-sans">
-              Zentricore IT Solutions is a premium IT Consultancy and Service provider delivering complex system integrations and climate management for modern offices, laboratories, and mission-critical server environments.
+              Zentrixcore IT Solutions is a premium IT Consultancy and Service provider delivering complex system integrations and climate management for modern offices, laboratories, and mission-critical server environments.
             </p>
             <div className="pt-2 border-t border-white/5">
               <p className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
@@ -192,7 +192,7 @@ export default function Footer({
 
         {/* Bottom copyright strip */}
         <div className="border-t border-white/5 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-slate-500">
-          <p>© Copyright Zentricore IT Solutions Ltd. 2026 - All Rights Reserved</p>
+          <p>© Copyright Zentrixcore IT Solutions Ltd. 2026 - All Rights Reserved</p>
           <div className="flex flex-wrap justify-center gap-4 font-semibold">
             <button onClick={() => onOpenShop?.()} className="hover:text-slate-300">About us</button>
             <button onClick={() => onOpenShop?.()} className="hover:text-slate-300">IT Shop</button>

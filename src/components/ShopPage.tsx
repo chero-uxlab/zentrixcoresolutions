@@ -288,7 +288,7 @@ export default function ShopPage({
   const categories = ["all", "Hardware", "Software", "Security", "Services"];
 
   return (
-    <div className="w-full bg-slate-50 font-sans min-h-screen pb-20" id="zentricore-shop-page">
+    <div className="w-full bg-slate-50 font-sans min-h-screen pb-20" id="zentrixcore-shop-page">
       {/* Page Hero Banner */}
       <div className="bg-slate-900 text-white py-12 px-4 relative overflow-hidden border-b border-slate-800">
         <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -1072,7 +1072,7 @@ export default function ShopPage({
                         
                         <div className="text-xs text-slate-700 space-y-1.5 bg-white p-4 rounded-xl border border-slate-100 font-semibold font-mono">
                           <p className="flex justify-between border-b border-slate-50 pb-1.5"><span>BANK:</span> <strong className="text-slate-900">Equity Bank Kenya</strong></p>
-                          <p className="flex justify-between border-b border-slate-50 pb-1.5"><span>HOLDER:</span> <strong className="text-slate-900">Zentricore IT Solutions Ltd</strong></p>
+                          <p className="flex justify-between border-b border-slate-50 pb-1.5"><span>HOLDER:</span> <strong className="text-slate-900">Zentrixcore IT Solutions Ltd</strong></p>
                           <p className="flex justify-between border-b border-slate-50 pb-1.5"><span>ACCOUNT:</span> <strong className="text-slate-900">1234567890123</strong></p>
                           <p className="flex justify-between border-b border-slate-50 pb-1.5"><span>BRANCH:</span> <strong className="text-slate-900">Nairobi CBD Branch</strong></p>
                           <p className="flex justify-between"><span>SWIFT CODE:</span> <strong className="text-slate-900">EQBLKENA</strong></p>
@@ -1121,7 +1121,7 @@ export default function ShopPage({
                 <div className="space-y-2">
                   <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Enterprise Order Confirmed!</h3>
                   <p className="text-xs text-slate-500 max-w-sm mx-auto font-semibold leading-relaxed">
-                    Thank you for choosing Zentricore, {firstName}. Your corporate order has been successfully logged into our provisioning system.
+                    Thank you for choosing Zentrixcore, {firstName}. Your corporate order has been successfully logged into our provisioning system.
                   </p>
                 </div>
 
@@ -1305,7 +1305,7 @@ export default function ShopPage({
               <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2 text-[10px] text-slate-400 leading-normal font-semibold">
                 <Lock className="w-4 h-4 text-slate-300 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="uppercase text-slate-500 tracking-wider">ZENTRICORE GUARANTEE</p>
+                  <p className="uppercase text-slate-500 tracking-wider">ZENTRIXCORE GUARANTEE</p>
                   <p className="mt-0.5 font-medium font-sans">
                     All products are certified genuine, include a 5-year corporate warranty, and are eligible for our Managed IT SLA onboarding services.
                   </p>

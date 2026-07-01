@@ -1149,7 +1149,7 @@ export const PRODUCTS: ProductItem[] = [
 export const FAQS = [
   {
     question: "Do you provide on-premise hardware installation alongside software setups?",
-    answer: "Yes, ZENTRICORE is a complete turn-key solutions provider. We supply, mount, pull cabling, configure, and warrant all physical networking equipment, server racks, UPS systems, and air-conditioning units, alongside implementing active directory, CRM/ERP platforms, and cloud migrations."
+    answer: "Yes, ZENTRIXCORE is a complete turn-key solutions provider. We supply, mount, pull cabling, configure, and warrant all physical networking equipment, server racks, UPS systems, and air-conditioning units, alongside implementing active directory, CRM/ERP platforms, and cloud migrations."
   },
   {
     question: "Can I bundle Managed IT support with Environmental HVAC/Cooling maintenance?",

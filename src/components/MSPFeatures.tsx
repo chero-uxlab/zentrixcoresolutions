@@ -315,7 +315,7 @@ export default function MSPFeatures() {
               Trusted by Industry Leaders
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 font-sans leading-relaxed">
-              We understand Technology and I.T is our work. Get smart solutions to scale your business growth. Zentricore IT Solutions is an IT Consultancy and Service provider bringing Enterprise IT solutions for businesses globally. Incorporating the best skills, expertise and technologies, maximize efficiency and returns through technology investments.
+              We understand Technology and I.T is our work. Get smart solutions to scale your business growth. Zentrixcore IT Solutions is an IT Consultancy and Service provider bringing Enterprise IT solutions for businesses globally. Incorporating the best skills, expertise and technologies, maximize efficiency and returns through technology investments.
             </p>
           </div>
 

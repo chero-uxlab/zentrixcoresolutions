@@ -13,7 +13,7 @@ export default function LiveChat() {
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: "agent",
-      text: "Hi there! Welcome to Zentricore IT Solutions. My name is Joan. How can I assist you with your IT systems, cloud, or HVAC requirements today?",
+      text: "Hi there! Welcome to Zentrixcore IT Solutions. My name is Joan. How can I assist you with your IT systems, cloud, or HVAC requirements today?",
       time: "Just now",
     },
   ]);
@@ -110,7 +110,7 @@ export default function LiveChat() {
                 <div>
                   <h4 className="font-extrabold text-xs uppercase tracking-wider">Joan (Support Agent)</h4>
                   <p className="text-[10px] text-teal-300 font-bold flex items-center gap-1">
-                    <Shield className="w-3 h-3" /> Zentricore Tech Support
+                    <Shield className="w-3 h-3" /> Zentrixcore Tech Support
                   </p>
                 </div>
               </div>
