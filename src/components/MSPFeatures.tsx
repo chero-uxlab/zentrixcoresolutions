@@ -277,60 +277,29 @@ export default function MSPFeatures() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Themed Storage & Backup Image */}
-            <div className="lg:col-span-5">
-              <div className="relative group">
-                {/* Accent glow behind image */}
-                <div className="absolute -inset-1.5 bg-gradient-to-r from-teal-500 to-orange-500 rounded-3xl blur opacity-25 group-hover:opacity-35 transition duration-1000" />
-                <div className="relative bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg">
-                  <img
-                    src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80"
-                    alt="Zentricore Immutable Backup Systems"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                  {/* Dark elegant mask */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  {/* Interactive status indicators */}
-                  <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-orange-400 bg-orange-500/20 border border-orange-500/30 px-2.5 py-1 rounded-full">
-                      Immutable Vault Active
-                    </span>
-                    <h4 className="text-lg font-extrabold uppercase tracking-tight">Enterprise Backup Security</h4>
-                    <p className="text-xs text-slate-300 leading-relaxed font-sans">
-                      Multi-tiered local & cloud synchronization safeguarding physical and virtual corporate assets against any active intrusion.
-                    </p>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {backupFeatures.map((feat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -15 : 15 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className="flex gap-4 p-6 bg-slate-50 border-l-4 border-teal-600 rounded-r-xl hover:bg-slate-100 transition-colors duration-300"
+              >
+                <div className="flex-shrink-0">
+                  {feat.icon}
                 </div>
-              </div>
-            </div>
-
-            {/* Backup Features Grid */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {backupFeatures.map((feat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="flex flex-col gap-3 p-6 bg-slate-50 border-l-4 border-teal-600 rounded-r-xl hover:bg-slate-100 hover:shadow-sm transition-all duration-300"
-                >
-                  <div className="p-2 bg-white rounded-lg w-fit shadow-sm text-teal-600">
-                    {feat.icon}
-                  </div>
-                  <div className="space-y-1">
-                    <h4 className="text-sm font-extrabold text-slate-900 uppercase tracking-wide">
-                      {feat.title}
-                    </h4>
-                    <p className="text-[11px] sm:text-xs text-slate-500 font-sans leading-relaxed">
-                      {feat.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                <div className="space-y-1.5">
+                  <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
+                    {feat.title}
+                  </h4>
+                  <p className="text-xs text-slate-500 font-sans leading-relaxed">
+                    {feat.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
