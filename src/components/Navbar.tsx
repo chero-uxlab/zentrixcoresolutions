@@ -26,6 +26,7 @@ interface NavbarProps {
   onScrollToContact: () => void;
   selectedServiceId: string | null;
   onSelectService: (serviceId: string | null) => void;
+  isShopView?: boolean;
 }
 
 export default function Navbar({
@@ -36,6 +37,7 @@ export default function Navbar({
   onScrollToContact,
   selectedServiceId,
   onSelectService,
+  isShopView = false,
 }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -372,12 +374,20 @@ export default function Navbar({
             <li>
               <button
                 onClick={onOpenShop}
-                className="text-xs font-bold text-slate-700 hover:text-teal-600 uppercase tracking-wider px-3 py-2 rounded-lg transition-colors flex items-center gap-1"
+                className={`text-xs font-bold uppercase tracking-wider px-3 py-2 rounded-lg transition-colors flex items-center gap-1 ${
+                  isShopView 
+                    ? "text-teal-700 bg-teal-50" 
+                    : "text-slate-700 hover:text-teal-600 hover:bg-slate-50"
+                }`}
                 id="navbar-shop-button"
               >
                 IT Shop
-                <span className="text-[10px] font-bold bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded-md">
-                  NEW
+                <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-md ${
+                  isShopView 
+                    ? "bg-teal-200 text-teal-850" 
+                    : "bg-orange-100 text-orange-700"
+                }`}>
+                  {isShopView ? "ACTIVE" : "NEW"}
                 </span>
               </button>
             </li>
@@ -486,11 +496,15 @@ export default function Navbar({
                   </button>
                   <button
                     onClick={() => handleMobileNavClick(onOpenShop)}
-                    className="w-full text-left py-2 font-bold text-sm text-teal-600 flex items-center justify-between block"
+                    className={`w-full text-left py-2 font-bold text-sm flex items-center justify-between block ${
+                      isShopView ? "text-teal-700 font-extrabold" : "text-slate-700 hover:text-teal-600"
+                    }`}
                   >
                     <span>Browse IT Shop</span>
-                    <span className="text-[10px] font-bold bg-teal-50 px-2 py-0.5 rounded text-teal-700">
-                      Shop Open
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
+                      isShopView ? "bg-teal-100 text-teal-800" : "bg-teal-50 text-teal-700"
+                    }`}>
+                      {isShopView ? "SHOP ACTIVE" : "GO TO SHOP"}
                     </span>
                   </button>
                 </div>

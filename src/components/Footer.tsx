@@ -4,12 +4,14 @@ interface FooterProps {
   onScrollToCalculator: () => void;
   onScrollToDiagnostics: () => void;
   onScrollToContact: () => void;
+  onOpenShop?: () => void;
 }
 
 export default function Footer({
   onScrollToCalculator,
   onScrollToDiagnostics,
   onScrollToContact,
+  onOpenShop,
 }: FooterProps) {
   return (
     <footer className="bg-gradient-to-br from-slate-950 to-slate-900 text-slate-300 pt-16 border-t-4 border-teal-600 relative overflow-hidden">
@@ -109,9 +111,12 @@ export default function Footer({
                 </button>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors flex items-center gap-1.5 font-medium">
+                <button
+                  onClick={() => onOpenShop?.()}
+                  className="hover:text-white transition-colors flex items-center gap-1.5 font-medium text-left"
+                >
                   <ChevronRight className="w-3.5 h-3.5 text-teal-500" /> IT Accessories Shop
-                </a>
+                </button>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors flex items-center gap-1.5 font-medium">
@@ -178,8 +183,8 @@ export default function Footer({
         <div className="border-t border-white/5 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-slate-500">
           <p>© Copyright Zentricore IT Solutions Ltd. 2026 - All Rights Reserved</p>
           <div className="flex flex-wrap justify-center gap-4 font-semibold">
-            <a href="#" className="hover:text-slate-300">About us</a>
-            <a href="#" className="hover:text-slate-300">IT Shop</a>
+            <button onClick={() => onOpenShop?.()} className="hover:text-slate-300">About us</button>
+            <button onClick={() => onOpenShop?.()} className="hover:text-slate-300">IT Shop</button>
             <a href="#" className="hover:text-slate-300">Knowledge Base</a>
             <a href="#" className="hover:text-slate-300">Accessibility</a>
             <a href="#" className="hover:text-slate-300">Privacy Policy</a>

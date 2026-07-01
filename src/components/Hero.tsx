@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Send, PhoneCall, ChevronRight, Wind, ShieldAlert, Award, AlertCircle } from "lucide-react";
+import heroBg from "../assets/images/ac_hero_bg_1782809286852.jpg";
 
 interface HeroProps {
   onScrollToCalculator: () => void;
@@ -13,7 +14,7 @@ export default function Hero({ onScrollToCalculator, onScrollToContact }: HeroPr
       <div 
         className="absolute inset-0 bg-cover bg-center z-0" 
         style={{ 
-          backgroundImage: `url('/src/assets/images/ac_hero_bg_1782809286852.jpg')`
+          backgroundImage: `url(${heroBg})`
         }} 
       />
 

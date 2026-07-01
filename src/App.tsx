@@ -15,7 +15,7 @@ import Diagnostics from "./components/Diagnostics";
 import TestimonialsAndFaq from "./components/TestimonialsAndFaq";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
-import ShopDrawer from "./components/ShopDrawer";
+import ShopPage from "./components/ShopPage";
 import ServiceLandingPage from "./components/ServiceLandingPage";
 import KnowledgeBase from "./components/KnowledgeBase";
 import LiveChat from "./components/LiveChat";
@@ -25,7 +25,7 @@ import MSPFeatures from "./components/MSPFeatures";
 
 export default function App() {
   // Shopping Cart state
-  const [shopOpen, setShopOpen] = useState(false);
+  const [isShopView, setIsShopView] = useState(false);
   const [cart, setCart] = useState<CartItem[]>([]);
 
   // Selected Service Page ID (displays high-fidelity matching landing page when active)
@@ -92,7 +92,8 @@ export default function App() {
     const formattedMessage = `I would like to receive a proposal including these shop accessory additions:\n${itemsDescription}\nPlease contact me to finalize configuration.`;
     
     setPreFilledInquiry(formattedMessage);
-    handleScrollToElement("zentrix-contact-form");
+    setIsShopView(false);
+    setTimeout(() => handleScrollToElement("zentrix-contact-form"), 150);
   };
 
   const handleScheduleFromDiagnostics = (symptomLabel: string) => {
@@ -109,6 +110,7 @@ export default function App() {
 
   const handleSelectServiceFromLanding = (serviceId: string | null) => {
     setSelectedServiceId(serviceId);
+    setIsShopView(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -120,25 +122,34 @@ export default function App() {
       {/* 1. Sticky Corporate Header with full service link parameters */}
       <Navbar
         cart={cart}
-        onOpenShop={() => setShopOpen(true)}
+        onOpenShop={() => {
+          setIsShopView(true);
+          setSelectedServiceId(null);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
         onScrollToCalculator={() => {
           setSelectedServiceId(null); // Return to home view
+          setIsShopView(false);
           setActiveSuiteTab("calculator");
           setTimeout(() => handleScrollToElement("hvac-interactive-suite"), 100);
         }}
         onScrollToDiagnostics={() => {
           setSelectedServiceId(null); // Return to home view
+          setIsShopView(false);
           setActiveSuiteTab("diagnostics");
           setTimeout(() => handleScrollToElement("hvac-interactive-suite"), 100);
         }}
         onScrollToContact={() => {
-          handleScrollToElement("zentrix-contact-form");
+          setIsShopView(false);
+          setSelectedServiceId(null);
+          setTimeout(() => handleScrollToElement("zentrix-contact-form"), 100);
         }}
         selectedServiceId={selectedServiceId}
         onSelectService={handleSelectServiceFromLanding}
+        isShopView={isShopView}
       />
 
-      {/* Conditionally Render either the Selected Service Landing Page OR the complete Home Landing Layout */}
+      {/* Conditionally Render either the Selected Service Landing Page, Shop Page, OR the complete Home Landing Layout */}
       <AnimatePresence mode="wait">
         {selectedService ? (
           <motion.div
@@ -153,6 +164,24 @@ export default function App() {
               onGoBack={() => setSelectedServiceId(null)}
               onScrollToContact={() => handleScrollToElement("zentrix-contact-form")}
               onPreFillContact={setPreFilledInquiry}
+            />
+          </motion.div>
+        ) : isShopView ? (
+          <motion.div
+            key="shoppage-view"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.35 }}
+          >
+            <ShopPage
+              cart={cart}
+              onAddToCart={handleAddToCart}
+              onRemoveFromCart={handleRemoveFromCart}
+              onUpdateQuantity={handleUpdateQuantity}
+              onApplyCartToQuote={handleApplyCartToQuote}
+              onClearCart={() => setCart([])}
+              onClose={() => setIsShopView(false)}
             />
           </motion.div>
         ) : (
@@ -273,27 +302,26 @@ export default function App() {
       <Footer
         onScrollToCalculator={() => {
           setSelectedServiceId(null);
+          setIsShopView(false);
           setActiveSuiteTab("calculator");
           setTimeout(() => handleScrollToElement("hvac-interactive-suite"), 100);
         }}
         onScrollToDiagnostics={() => {
           setSelectedServiceId(null);
+          setIsShopView(false);
           setActiveSuiteTab("diagnostics");
           setTimeout(() => handleScrollToElement("hvac-interactive-suite"), 100);
         }}
-        onScrollToContact={() => handleScrollToElement("zentrix-contact-form")}
-      />
-
-      {/* 10. Accessory Store Drawer Panel */}
-      <ShopDrawer
-        isOpen={shopOpen}
-        onClose={() => setShopOpen(false)}
-        cart={cart}
-        onAddToCart={handleAddToCart}
-        onRemoveFromCart={handleRemoveFromCart}
-        onUpdateQuantity={handleUpdateQuantity}
-        onApplyCartToQuote={handleApplyCartToQuote}
-        onClearCart={() => setCart([])}
+        onScrollToContact={() => {
+          setIsShopView(false);
+          setSelectedServiceId(null);
+          setTimeout(() => handleScrollToElement("zentrix-contact-form"), 100);
+        }}
+        onOpenShop={() => {
+          setIsShopView(true);
+          setSelectedServiceId(null);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
       />
 
       {/* 11. Interactive live support assist agent (Joan) */}
