@@ -153,6 +153,7 @@ export default function Navbar({
             <img 
               src="https://cdn.oreateai.com/aiimage/upload/3f836624f12288644ee1490b/38f73a8810f84f40b1c731f8556948c1.png" 
               alt="Zentricore IT Solutions" 
+              referrerPolicy="no-referrer"
               className="h-11 w-auto rounded-lg object-contain group-hover:scale-105 transition-transform duration-300"
             />
             <div className="flex flex-col">
@@ -457,6 +458,7 @@ export default function Navbar({
                   <img 
                     src="https://cdn.oreateai.com/aiimage/upload/3f836624f12288644ee1490b/38f73a8810f84f40b1c731f8556948c1.png" 
                     alt="Zentricore IT Solutions" 
+                    referrerPolicy="no-referrer"
                     className="h-7 w-auto object-contain"
                   />
                   <span className="font-bold text-slate-900 text-sm">ZENTRICORE Menu</span>

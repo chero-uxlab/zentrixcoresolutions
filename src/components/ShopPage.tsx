@@ -1146,7 +1146,7 @@ export default function ShopPage({
                       className="flex items-start gap-3 p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-xs relative group"
                     >
                       <div className="w-10 h-10 rounded-lg overflow-hidden bg-slate-100 flex-shrink-0">
-                        <img src={item.product.image} alt={item.product.name} className="w-full h-full object-cover" />
+                        <img src={item.product.image} alt={item.product.name} referrerPolicy="no-referrer" className="w-full h-full object-cover" />
                       </div>
                       
                       <div className="flex-1 min-w-0 pr-6">

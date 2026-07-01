@@ -133,7 +133,7 @@ export const KSH_PRODUCTS: ProductItem[] = [
     price: 26999,
     rating: 4.8,
     description: "Multi-function 3-in-1 print, copy, and scan. Features ultra-low-cost ink tank technology with spill-free, key-locked bottles.",
-    image: "https://images.unsplash.com/photo-1612815154858-60aa4c233ab0?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500&q=80",
     features: [
       "Integrated high-capacity spill-free ink tanks",
       "Extremely low cost per print page ratio",
